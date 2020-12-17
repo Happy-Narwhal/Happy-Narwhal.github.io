@@ -139,12 +139,201 @@ body {
     max-height: 500px;
 }
 
+/* process */ 
+input[type="radio"]{
+    display: none;
+    position: absolute
+}
+.process-box{
+    margin: 150px auto;
+    width: 800px;
+}
+.process-head{
+    position: relative;
+    width: 90%;
+    margin: auto;
+    height: 100px;
+    margin-top: 40px;
+    animation: trans .7s linear forwards;
+}
+
+ul.pNav{
+    padding-top : 15px;
+    z-index: 5;
+    position: absolute;
+    width: 100%;
+}
+
+ul.pNav li{
+    list-style: none;
+    float: left;
+    width: 25%;
+    text-align: center;
+    color: #bebebe;
+    text-transform: uppercase;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all .3s ease;
+    vertical-align: middle;
+    height: 90px;
+    position:relative;
+}
+
+ul.pNav li::before{
+    content: '';
+    width: 25px;
+    height: 25px;
+    border: 2px solid #87ceeb ;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+    transition: all .3s ease;
+}
+
+ul.pNav li:hover::before{
+    border: 2px solid #ffffff;
+    background: #87ceeb ;
+    
+}
+
+ul.pNav li .bar{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+ul.pNav li.active,
+ul.pNav li:hover {
+    color: #23395d;
+}
+
+ul.pNav li::after {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    background: #bebebe;
+    border-radius: 50%;
+    margin: auto;
+    border: 7px solid #ffffff;
+    margin-top: 40px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+}
+
+ul.pNav li:hover::after,
+ul.pNav li.active::after {
+    background: #23395d;
+}
+
+.line{
+    width: 76%;
+    margin: auto;
+    background: #d3d3d3;
+    height: 7px;
+    position: absolute;
+    left: 17%;
+    top: 110px;
+    z-index: 1;
+    border-radius: 50px;
+}
+
+.line span{
+    content: '';
+    width: 2%;
+    height: 100%;
+    background-image: linear-gradient(to right, #a29bfe 0%, #87ceeb 100%);
+    position: absolute;
+    z-index: 2;
+    border-radius: 50px;
+    transition: all .8s ease;
+}
+
+.contents{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    animation: anim .7s linear forwards;
+}
+
+.meet-section, .plan-section, .develop-section, .launch-section{
+    width: 80%;
+    margin: auto;
+    border-radius: 4px;
+    padding: 40px;
+}
+
+.contents section h1 {
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.contents section p{
+    font-size: 20px;
+    text-align: center;
+} 
+
+.meet:checked ~ .process-head .pNav li.bar1::before,
+
+.plan:checked ~ .process-head .pNav li.bar1::before,
+.plan:checked ~ .process-head .pNav li.bar2::before,
+
+.develop:checked ~ .process-head .pNav li.bar1::before,
+.develop:checked ~ .process-head .pNav li.bar2::before,
+.develop:checked ~ .process-head .pNav li.bar3::before,
+
+.launch:checked ~ .process-head .pNav li.bar1::before,
+.launch:checked ~ .process-head .pNav li.bar2::before,
+.launch:checked ~ .process-head .pNav li.bar3::before,
+.launch:checked ~ .process-head .pNav li.bar4::before{
+    border: 2px solid #ffffff;
+    background: #87ceeb;
+    transition: all .3 ease;
+}
+
+.plan:checked ~ .process-head .line span{
+    width: 35%;
+}
+
+.develop:checked ~ .process-head .line span{
+    width: 68%;
+}
+
+.launch:checked ~ .process-head .line span{
+    width: 100%;
+}
+
+
+.meet-section,
+.plan-section,
+.develop-section,
+.launch-section{
+    transform: scale(0);
+    transform-origin: center bottom;
+    position: absolute;
+    top: 0;
+}
+
+.meet:checked ~ .contents .meet-section,
+.plan:checked ~ .contents .plan-section,
+.develop:checked ~ .contents .develop-section,
+.launch:checked ~ .contents .launch-section{
+    display: block;
+    transform: scale(1);
+    transform-origin: bottom;
+}
+
 /* portfolio */ 
 
 .portfolio .pHeader{
     text-align: center;
     font-size: 35px;
-    margin-top: 50px;
+    padding-top: 150px;
 }
 
 .portfolio-box{
