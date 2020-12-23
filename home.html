@@ -8,6 +8,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/js/jquery.js"></script>
+    <script>
+        $('.contact1-form').on('submit',function(e){
+        //optional validation code here
+  
+        e.preventDefault();
+      
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbwvmmUfuteX598ZBwjJgiPUrZMwVMv2FPIbMeOhboOXFZTqbPhMsYTa/exec",
+            method: "POST",
+            dataType: "json",
+            data: $(".contact1-form").serialize(),
+            success: function(response) {
+                
+                if(response.result == "success") {
+                    $('.contact1-form')[0].reset();
+                    alert('Thank you for contacting us.');
+                    return true;
+                }
+                else {
+                    alert("Something went wrong. Please try again.")
+                }
+            },
+            error: function() {
+                
+                alert("Something went wrong. Please try again.")
+            }
+        })
+    });
+    </script>
     <title>Happy Narwhal</title>
 
 </head>
@@ -59,8 +88,66 @@
 
     </div>
 
+
+    <!--Type Section-->
+    <div class="type-section">
+        <div class="headline"></div>
+        <h1 class="main">Best Solution For You</h1>
+        <p></p>
+        <div class="container">
+            <div class="row text">
+                <div class="column-process">
+                    <div class="single-process">
+                        <div class="steps">
+                            <img src="images/undraw_personal_website_weap.svg" alt="Websites" height="150" />
+                        </div>
+                        <h3>WEBSITES</h3>
+                        <ul>
+                            <li>Personal website</li>
+                            <li>Responsive Website</li>
+                            <li>CMS(Content Managment System) Website</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column-process">
+                    <div class="single-process">
+                        <div class="steps">
+                            <img src="images/undraw_web_shopping_dd4l.svg" alt="Ecommerce" height="150" />
+                        </div>
+                        <h3>Ecommerce</h3>
+                        <ul>
+                            <li>Product & Categories</li>
+                            <li>Customer Registration</li>
+                            <li>Product&Categories</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column-process">
+                    <div class="single-process">
+                        <div class="steps">
+                            <img src="images/undraw_web_search_eetr.svg" alt="" height="150" />
+                        </div>
+                        <h3>Web Portal</h3>
+                        <p>Understanding your Business Strategy and Goals</p>
+                    </div>
+                </div>
+                <div class="column-process">
+                    <div class="single-process">
+                        <div class="steps">
+                            <img src="images/undraw_develop_app_kvt2.svg" alt="Mobile Apps" height="150" />
+                        </div>
+                        <h3>Mobile Apps</h3>
+                        <p>Understanding your Business Strategy and Goals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Process -->
     <div class="process-box">
+        <div class="headline"></div>
+        <h1 class="main">Our Development Process</h1>
         <input type="radio" class="meet" checked id="" name="process">
         <input type="radio" class="plan" id="" name="process">
         <input type="radio" class="develop" id="" name="process">
@@ -104,90 +191,39 @@
         </div>
     </div>
 
-    <div class="type-section">
-        <h1>Best Solution For You</h1>
-        <p></p>
-        <div class="container">
-            <div class="row text">
-                <div class="column-process">
-                    <div class="single-process">
-                        <div class="steps">
-                            <span class="fa-stack">
-                                <strong class="fa-stack-1x">1</strong>
-                            </span>
-                        </div>
-                        <h3>WEBSITES</h3>
-                        <p>Understanding your Business Strategy and Goals</p>
-                    </div>
-                </div>
-                <div class="column-process">
-                    <div class="single-process">
-                        <div class="steps">
-                            <span class="fa-stack">
-                                <strong class="fa-stack-1x">2</strong>
-                            </span>
-                        </div>
-                        <h3>Responsive Website</h3>
-                        <p>Understanding your Business Strategy and Goals</p>
-                    </div>
-                </div>
-                <div class="column-process">
-                    <div class="single-process">
-                        <div class="steps">
-                            <span class="fa-stack">
-                                <strong class="fa-stack-1x">3</strong>
-                            </span>
-                        </div>
-                        <h3>Mobile Apps</h3>
-                        <p>Understanding your Business Strategy and Goals</p>
-                    </div>
-                </div>
-                <div class="column-process">
-                    <div class="single-process">
-                        <div class="steps">
-                            <span class="fa-stack">
-                                <strong class="fa-stack-1x">4</strong>
-                            </span>
-                        </div>
-                        <h3>Launch</h3>
-                        <p>Understanding your Business Strategy and Goals</p>
-                    </div>
-                </div>
-            </div>
 
 
-        </div>
-    </div>
-    
+    <!--Contact-->
     <div class="contact-us">
         <div class="headline"></div>
         <div class="title">
             <h1>Contact us</h1>
         </div>
-        <div class="form">
+        
+        <form class=".contact1-form" action="#0">
             <div class="form-items">
-                <input type="text" class="input" placeholder="Full Name">
+                <input type="text" id="name" name="name" required placeholder="Full Name">
             </div>
             <div class="form-items">
-                <input type="text" class="input" placeholder="Phone Number">
+                <input type="text" id="phone" name="phone" placeholder="Phone Number">
             </div>
             <div class="form-items">
-                <input type="text" class="input" placeholder="Email">
+                <input type="email" id="email" name="email" required placeholder="Email">
+                <div class="requirements">
+                    Must be a valid email address.
+                  </div>
             </div>
             <div class="form-items">
-                <input type="text" class="input" placeholder="Forecasted-Budget">
+                <input type="text" id="budget" name="budget" required placeholder="Forecasted-Budget">
             </div>
             <div class="form-items">
-                <textarea class="input message" cols="30" rows="10" placeholder="Your project specification"></textarea>
+                <textarea type="text" cols="30" rows="10" id="message" name="message" required placeholder="Your project specification"></textarea>
             </div>
-        </div>
 
-        <div class="btn">
-            Submit
-        </div>
-
+            <div class="btn">
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
     </div>
-
 </body>
-
 </html>

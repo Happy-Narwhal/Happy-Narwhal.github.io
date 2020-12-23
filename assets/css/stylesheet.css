@@ -1,6 +1,7 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://use.typekit.net/ick5ppl.css");
 html {
     margin: 0;
     padding: 0;
@@ -47,7 +48,7 @@ body {
     z-index: 100;
     overflow: hidden;
     font-weight: bold;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);    
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
 }
 
 #nav>ul {
@@ -103,15 +104,17 @@ body {
 }
 
 /* banner */
+
 .headline-text {
     width: 100px;
     padding: 0;
-    margin:0;
+    margin: 0;
     background-image: linear-gradient(to right, #a29bfe 0%, #87ceeb 100%);
     height: 12px;
     position: relative;
     border-radius: 10px;
 }
+
 #banner {
     background: #ffffff;
     padding: 4.5em 0 0 0;
@@ -130,11 +133,18 @@ body {
     text-align: left;
 }
 
+.center-split figcaption {
+    padding: 150px 100px;
+}
+
 .center-split h1 {
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 0;
-    font-size: 35px;
-    font-weight: bold;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
 }
 
 .center-split ul {
@@ -144,7 +154,6 @@ body {
     font-size: 20px;
     font-weight: 100;
 }
-
 
 .center-split>* {
     display: flex;
@@ -160,6 +169,14 @@ body {
 }
 
 /* process */
+
+.main {
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    text-align: center;
+}
 
 input[type="radio"] {
     display: none;
@@ -337,56 +354,61 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
 
 /* types */
 
-.type-section{
+.type-section {
     background-color: #f4f5f8;
     margin-top: 20px;
-    padding: 30px 150px;
-    padding-bottom: 60px;
-    text-align: center;
+    padding: 30px 150px 60px;
+    text-align: left;
 }
 
-.type-section h1{
-    font-size: 40px;
-    font-weight: 600;
-    text-align: center;
-}
-.column-process{
+.column-process {
     margin-left: auto;
     display: inline-block;
     width: 20%;
     padding: 0 30px;
     text-align: center;
+    transition: all .2s ease-in-out;
 }
 
-.single-process{
+.single-process {
     background-color: #fff;
     padding: 5px;
     border: 2px solid #fff;
     border-radius: 8px;
     box-shadow: 0 15px 30px rgba(102, 113, 228, 0.13);
-    height: 300px;
+    height: 400px;
     margin: 20px 0;
+    transition: all .2s ease-in-out;
 }
 
-.steps{
+.single-process:hover {
+    transform: scale(1.1);
+}
+
+.single-process h3 {
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding: 10px 0;
     margin: 0;
-    font-size: 40px;
+    text-align: center;
+}
+
+.single-process ul, .single-process p {
+    margin: auto;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.steps {
+    margin-top: 10px;
+    font-size: 150px;
     top: 0;
 }
 
-.single-process h3{
-    font-size: 25px;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding-bottom: 10px;
-}
-
-.single-process p{
-    font-size: 18px;
-    font-weight: 400;
-}
-
-/*contact form*/ 
+/*contact form*/
 
 .headline {
     width: 100px;
@@ -411,11 +433,17 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
     margin: 10px 0 30px;
 }
 
-.form, .form-items {
-    width: 100%;
+.requirements {
+    padding: 0 30px 0 50px;
+    color: #999;
+    max-height: 0;
+    transition: 0.28s;
+    overflow: hidden;
+    color: red;
+    font-style: italic;
 }
 
-.form-items .input {
+.form-items input, .form-items #message {
     display: block;
     margin: auto;
     width: 50%;
@@ -428,27 +456,31 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
     border-radius: 10px;
 }
 
-.form-items .input.message {
-    height: 125px;
+.form-items #message {
+    height: 150px;
     border-radius: 10px;
     margin-bottom: 30px;
     padding: 15px 15px;
     resize: none;
 }
 
-.btn {
+.btn input[type="submit"]{
+    display: block;
+    width: 50%;
     background-image: linear-gradient(to right, #a29bfe 0%, #87ceeb 100%);
-    width: 49%;
+    color: white;
+    border: 0;
+    padding: 12px;
+    font-size: 20px;
     text-align: center;
     margin: auto;
     color: #fff;
-    padding: 12px;
     border-radius: 10px;
     cursor: pointer;
     transition: all .8s ease;
 }
 
-.btn:hover{
+.btn:hover {
     opacity: 0.5;
 }
 
