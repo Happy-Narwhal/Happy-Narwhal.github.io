@@ -18,22 +18,49 @@ $(document).ready(function() {
     $(this).addClass("active").siblings().removeClass("active")
   })
 
-  var modal = document.getElementById('myModal');
+  $(window).scroll(function () {
 
-var img = $('.myImg');
-var modalImg = $("#img01");
-var captionText = document.getElementById("caption");
-$('.myImg').click(function(){
-    modal.style.display = "block";
-    var newSrc = this.src;
-    modalImg.attr('src', newSrc);
-    captionText.innerHTML = this.alt;
+
+    $('.animation').each(function () {
+        var imagePos = $('.top').offset().top;
+        var imageHeight = $('.top').height();
+        var topOfWindow = $(window).scrollTop();
+
+        if (imagePos < topOfWindow + imageHeight && imagePos + imageHeight > topOfWindow) {
+            $(this).addClass("animate");
+            jQuery('.typo').stop().animate({ left: '50px', width: '0px'  });
+        } 
+        if(imagePos == topOfWindow) {
+          $(this).removeClass("animate");
+          jQuery('.typo').stop().animate({ left: '140px', width: '200px'  });
+        
+      }
+    });
+    
+  
 });
 
-var span = document.getElementsByClassName("close")[0];
+  /*
+  var $window = $(window);
+  var $elem = $(".animation")
+  
+  function isScrolledIntoView($elem, $window) {
+      var docViewTop = $window.scrollTop();
+      var docViewBottom = docViewTop + $window.height();
+  
+      var elemTop = $elem.offset().top;
+      var elemBottom = elemTop + $elem.height();
+  
+      return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  }
 
-span.onclick = function() {
-  modal.style.display = "none";
-}
+  $(document).on("scroll", function () {
+      if (isScrolledIntoView($elem, $window)) {
+        $(".animation").addClass("animate")
+      }
+     
+  });
+*/
+
 
 });
