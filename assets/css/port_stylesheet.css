@@ -31,7 +31,6 @@ body {
 
 
 /* navigation bar*/ 
-
 .top{
     position:absolute;
     top: 0;
@@ -159,7 +158,6 @@ body {
 #check {
     display: none;
 }
-
 @media (max-width: 858px) {
     nav {
         margin: 0;
@@ -198,8 +196,18 @@ body {
     #check:checked~ul {
         left: 0;
     }
+    .animation .logo{
+        width: 80px;
+    }
+    .typo .logo{
+        width: 150px;
+    }
+    .typo{
+        top: 30px;
+        left: 110px;
+    }
+    
 }
-
 
 .main {
     font-family: montserrat, sans-serif;
@@ -223,23 +231,24 @@ body {
 
 .portfolio-box, .services-box, .portfolio-detail-box {
     max-width: 100%;
-    margin: 150px;
+    margin: 100px;
 }
 
 .port-row {
-    display: inline-block;
+    display: block;
     width: 100%;
     padding: 15px;
+    margin: auto;
 }
 
 .gallery {
     position: relative;
-    margin: auto;
-    width: 22%;
+    display: block;
+    width: 350px;
+    height: 250px;
     float: left;
     cursor: pointer;
     margin: 20px;
-    height: 250px;
     overflow: hidden;
 }
 
