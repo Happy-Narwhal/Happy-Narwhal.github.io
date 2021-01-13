@@ -31,15 +31,16 @@ body {
 
 /* navigation bar*/
 
-.top{
-    position:absolute;
+.top {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100px;
     height: 100px;
     z-index: -1;
 }
-.animation{
+
+.animation {
     width: 100px;
     height: 100px;
     position: absolute;
@@ -51,7 +52,7 @@ body {
     overflow: hidden;
 }
 
-.typo{
+.typo {
     position: absolute;
     top: 20px;
     left: 140px;
@@ -62,11 +63,11 @@ body {
     transition: 0.4s ease-out;
 }
 
-.animation.animate  {
+.animation.animate {
     animation: rotation 1s 1 linear;
 }
 
-.animation:hover .logo{
+.animation:hover .logo {
     animation: rotation 1.5s 1 linear;
 }
 
@@ -143,7 +144,6 @@ body {
 
 #nav ul li a:hover {
     color: #5388AB;
-    cursor: pointer
 }
 
 .checkbtn {
@@ -198,6 +198,16 @@ body {
     #check:checked~ul {
         left: 0;
     }
+    .animation .logo {
+        width: 80px;
+    }
+    .typo .logo {
+        width: 150px;
+    }
+    .typo {
+        top: 30px;
+        left: 110px;
+    }
 }
 
 .headline {
@@ -220,6 +230,42 @@ body {
 
 /* About Us Page */
 
+.agency-box {
+    display: block;
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+
+.agency-box h2 {
+    font-weight: 200;
+    font-size: 40px;
+    margin-bottom: 100px;
+    margin: 120px 0 200px;
+}
+
+:root {
+    --mainColor: #87ceeb;;
+  }
+  
+.agency-box span {
+    background: linear-gradient( to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 4px;
+    color: #000;
+    text-decoration: none;
+    transition: background-size .2s;
+}
+
+.agency-box span:hover {
+    background-size: 4px 50px;
+}
+
+.agency-box h3 {
+    font-size: 35px;
+}
+
 .about-contain {
     background: #ffffff;
     padding: 120px 0 0 0;
@@ -228,41 +274,8 @@ body {
     max-width: 100%;
 }
 
-.welcome {
-    position: absolute;
-    top: 200px;
-    transform: translateY(-50%);
-    width: 100%;
-}
-
-.welcome h1 {
-    height: 80px;
-    margin: 0;
-    padding: 20px 0;
-    font-size: 80px;
-    font-weight: 900;
-    text-align: center;
-    color: transparent;
-    background-image: linear-gradient(to right, #7d73ff, #a29bfe, #cccafa, #87ceeb, #51bfed, #3874ef, #0f3b97, #0f3b97, #0f3b97);
-    -webkit-background-clip: text;
-    animation: animate 10s linear infinite;
-    background-size: 1000%;
-}
-
-@keyframes animate {
-    0% {
-        background-position: 0% 100%;
-    }
-    50% {
-        background-position: 100% 0%;
-    }
-    75% {
-        background-position: 0% 100%;
-    }
-}
-
-.teams {
-    padding-top: 200px;
+.team-box {
+    padding-top: 100px;
 }
 
 .row {
@@ -418,25 +431,19 @@ body {
         display: block;
         margin: 0 auto;
     }
-    .welcome {
-        font-size: 60px;
-    }
 }
 
 @media only screen and (max-width: 1250px) {
     .row {
         padding: 0;
     }
-    .welcome h1 {
-        font-size: 60px;
-    }
-    .teams .headline {
+    .team-box .headline {
         margin-top: 50px;
     }
     .main {
         margin: 20px;
     }
-    .teams {
+    .team-box {
         padding: 100px;
     }
     .info {
@@ -468,9 +475,6 @@ body {
     .our-team {
         margin-bottom: 30px;
     }
-    .welcome h1 {
-        font-size: 55px;
-    }
 }
 
 @media (max-width: 858px) {
@@ -479,9 +483,6 @@ body {
     }
     .our-team img {
         text-align: center;
-    }
-    .welcome h1 {
-        font-size: 50px;
     }
     .main {
         font-size: 40px;
