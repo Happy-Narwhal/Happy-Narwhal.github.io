@@ -265,8 +265,46 @@ body {
 }
 
 /* responsive */
+@media (max-width: 1200px){
+    .center-split .first{
+        padding-left: 40px;
+    }
+    .center-split h1{
+        font-size: 35px;
+    }
+}
+@media (max-width: 1020px){
+    .center-split{
+        margin: 150px 100px 150px 100px;
+    }
+}
+@media (max-width: 858px){
+    .center-split{
+        margin: 150px 50px 0px 50px;
+    }
+    .center-split:nth-child(2){
+        margin: 80px 50px 100px 50px;
+    }
+    .center-split h1{
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    .center-split ul{
+        font-size: 17px;
+        line-height: normal;
+    }
+}
+@media (max-width: 640px){
+    .center-split{
+        margin: 150px 20px 50px 20px;
+    }
+    .center-split h1{
+        font-size: 25px;
+        line-height: normal;
+   }
+}
 
-@media (min-width: 720px) {
+@media (min-width: 600px) {
     .center-split {
         display: grid;
         grid-template-columns: repeat(2, 50%);
