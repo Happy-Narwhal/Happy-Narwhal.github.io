@@ -19,10 +19,11 @@ $(document).ready(function() {
   })
 
   $(window).scroll(function () {
-
+    $(this).removeClass("animate");
 
     $('.animation').each(function () {
         var imagePos = $('.top').offset().top;
+        var resetPost = $('.top').offset().bottom;
         var imageHeight = $('.top').height();
         var topOfWindow = $(window).scrollTop();
 
@@ -30,11 +31,16 @@ $(document).ready(function() {
             $(this).addClass("animate");
             jQuery('.typo').stop().animate({ left: '50px', width: '0px'  });
         } 
+        
         if(imagePos == topOfWindow) {
           $(this).removeClass("animate");
-          jQuery('.typo').stop().animate({ left: '140px', width: '200px'  });
-        
-      }
+          if ($(window).width() < 858) {
+            jQuery('.typo').stop().animate({ left: '110px', width: '200px'  });
+          }
+          else{
+            jQuery('.typo').stop().animate({ left: '140px', width: '200px'  });
+          }
+        }
     });
     
   

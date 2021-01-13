@@ -195,6 +195,17 @@ body {
     #check:checked~ul {
         left: 0;
     }
+    .animation .logo{
+        width: 80px;
+    }
+    .typo .logo{
+        width: 150px;
+    }
+    .typo{
+        top: 30px;
+        left: 110px;
+    }
+    
 }
 
 /* banner */
