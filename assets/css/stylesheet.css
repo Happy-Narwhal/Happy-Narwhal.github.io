@@ -502,13 +502,13 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
     transform: scale(1);
     transform-origin: bottom;
 }
-@media (max-width: 840px){
+@media (max-width: 900px){
     .process-box{
         width: auto;
     }
 }
 
-@media (max-width: 840px){
+@media (max-width: 858px){
     .main{
         font-size: 40px;
         margin: auto;
@@ -527,16 +527,18 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
     
     .contents section h1{
         font-size: 22px;
+        margin-bottom: 30px;
     }
     .contents section p{
-        font-size: 16px;
+        font-size: 14px;
     }
     .meet-section, .plan-section, .develop-section, .launch-section{
         display: block;
         position: relative;
         padding: 0 20px;
-        margin: 0;
-        width: 90%;
+        margin: auto;
+        width: 70%;
+        line-height: 25px;
         transform: scale(1);
     }
 }
@@ -569,7 +571,7 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
     border: 2px solid #fff;
     border-radius: 8px;
     box-shadow: 0 15px 30px rgba(102, 113, 228, 0.13);
-    height: 400px;
+    height: auto;
     margin: 20px 0;
     transition: all .2s ease-in-out;
 }
@@ -595,9 +597,12 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
 }
 
 .steps {
-    margin-top: 10px;
+    display: block;
+    position: relative;
+    padding: 20px;
     font-size: 150px;
     top: 0;
+    
 }
 
 @media (max-width: 1600px) {
@@ -619,15 +624,16 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
     }
     .row-type {
         padding: 0 10px;
-        width: 22%;
-    }
-    .row-type {
         width: 100%;
     }
     .col-type {
-        width: 700px;
+        width: 80%;
         margin: 20px auto;
         height: 200px;
+    }
+    .col-type p{
+        line-height: normal;
+        padding: 0 10px;
     }
     .steps {
         display: block;
@@ -640,6 +646,26 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
         padding: 0;
     }
 }
+
+@media (max-width: 640px){
+    .steps{
+        width: 100%;
+        margin: 0;
+    }
+    .steps img{
+        height: 100px;
+    }
+    .col-type{
+        height: auto;
+    }
+    .col-type p{
+        width: 70%;
+        padding: 10px 0 20px;
+        margin: auto;
+    }
+
+}
+
 
 /*contact form*/
 
