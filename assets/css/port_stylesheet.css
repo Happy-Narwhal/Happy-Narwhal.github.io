@@ -142,12 +142,12 @@ body {
 }
 
 #nav ul li a:hover {
-    color: #5388AB;
+    color: #26b8ff;
 }
 
 .checkbtn {
     font-size: 30px;
-    color: #5388AB;
+    color: #26b8ff;
     float: right;
     line-height: 8px;
     margin-right: 40px;
