@@ -1,45 +1,46 @@
 /* Portfolio Page */
-
-.portfolio-box, .services-box{
+.portfolio-box{
+    margin-top: 170px;
     max-width: 100%;
-    margin-top: 150px;
+    height: auto;
+    padding-bottom: 10px;
 }
 
+.portfolio-box:nth-child(2){
+    margin-top: 50px;
+}
 .port-row {
-    display: block;
-    width: 85%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+    width: 90%;
     padding: 15px;
     margin: auto;
 }
 
 .gallery {
-    position: relative;
-    display: block;
-    width: 320px;
-    height: 250px;
-    float: left;
+    text-align: center;
+    display: flex;
+    flex-direction: column  ;
+    width: 20%;
     cursor: pointer;
     margin: 20px;
     overflow: hidden;
 }
 
-.port1 {
-    background-image: url("https://i.imgur.com/ZVKzoAc.jpg");
-}
-
-.noimg {
-    background-image: url("https://i.imgur.com/sjuKs62.png");
-}
-
 .port-content {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
+    position: relative;
     background-repeat: no-repeat;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     -o-transition: all .5s;
-    transition: all .5s;
+    transition: all .5s; 
+}
+.port-content img{
+    max-width: 100%;
+    height: auto;
 }
 
 .gallery:hover .port-content {
@@ -104,23 +105,25 @@
     left: 0;
     background-color: rgba(33, 40, 48, 0.75);
 }
-@media (max-width: 858px){
-    .port-row{
-        width: 80%;
-        padding: 0;
-    }
-    .gallery{
-        float: none;
-        margin: 0;
+
+@media (max-width: 1200px){
+    .port-row {
         width: 100%;
-        height: 380px;
-        margin-bottom: 10px;
     }
-    
 }
-@media (max-width: 640px){
-    .gallery{
-        height: 350px;  
+@media (max-width: 900px){
+.gallery {
+    width: 40%;
+}
+}
+@media (max-width: 600px){
+    .port-row{
+        width: 90%;
     }
-    
-}
+    .gallery {
+        width: 100%;
+    }
+    .main{
+        font-size: 35px;
+    }
+    }

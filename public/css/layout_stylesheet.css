@@ -1,6 +1,7 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url("https://use.typekit.net/ick5ppl.css");
 html {
     margin: 0;
@@ -160,7 +161,7 @@ body {
     display: none;
 }
 
-@media (max-width: 858px) {
+@media (max-width: 960px) {
     nav {
         margin: 0;
         height: 35px;
@@ -226,4 +227,5 @@ body {
     font-style: normal;
     font-size: 45px;
     text-align: center;
+    margin: 10px 0;
 }
