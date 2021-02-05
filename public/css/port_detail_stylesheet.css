@@ -1,4 +1,9 @@
 /* Portfolio-detail Page */
+
+body {
+    height: 100%;
+}
+
 .port-row {
     display: block;
     width: 100%;
@@ -18,6 +23,8 @@
     width: 90%;
     margin: 150px auto;
     max-width: 100%;
+    height: auto;
+    clear: both;
 }
 
 .portNav {
@@ -62,9 +69,10 @@
 .web1 {
     background-image: url('https://imgur.com/OdNmTH8.jpg');
 }
+
 :root {
     --mainColor: #87ceeb;
-  }
+}
 
 .detail-area a {
     padding-top: 20px;
@@ -81,10 +89,12 @@
 .detail-area a:hover {
     background-size: 4px 50px;
 }
+
 .tech-area {
     float: left;
     margin-left: 50px;
     width: 30%;
+    height: auto;
 }
 
 .tech-detail, .used-list {
@@ -149,22 +159,109 @@
 
 .portal-btn:hover {
     background-color: #23395d;
-    ;
     color: white;
 }
 
-@media (max-width: 1130px){
-    .detail-area{
+.scroll-background {
+    max-width: 100%;
+    top: 100px;
+    background-color: #fafafa;
+    clear: both;
+}
+
+.scroll-section {
+    max-width: 100%;
+    padding: 0 10%;
+    margin: auto;
+    padding-top: 50px;
+    display: table;
+    background-color: #fafafa;
+}
+
+.scroll-text {
+    top: 150px;
+    left: 0;
+    position: sticky;
+    padding-bottom: 100px;
+    margin: 0;
+    width: 24%;
+    float: left;
+    display: table-cell;
+}
+
+.scroll-text h4 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.scroll-text p {
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.scroll-graphic {
+    display: table-cell;
+    width: 75%;
+    float: right;
+    text-align: center;
+}
+
+.scroll-graphic img {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+#top {
+    position: absolute;
+    top: 0;
+}
+
+.back-btn {
+    position: relative;
+    top: -130px;
+    right: 80px;
+    float: right;
+    width: 100%;
+    background-color: transparent;
+}
+
+.back-btn a {
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+    color: #fff;
+    background-color: #87ceeb;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.back-btn a:hover {
+    background-color: #5e97ad;
+    color: white;
+}
+
+@media (max-width: 1400px) {
+    .scroll-section {
+        padding: 5%;
+    }
+    .back-btn {
+        top: 10px;
+        right: 0;
+    }
+}
+
+@media (max-width: 1130px) {
+    .detail-area {
         width: 100%;
     }
-    .tech-area{
+    .tech-area {
         float: none;
         display: block;
         margin: 0;
         width: 100%;
         padding-top: 100px;
     }
-    .portNav{
+    .portNav {
         position: relative;
         left: 4 0px;
     }
@@ -172,49 +269,74 @@
         width: 100%;
         height: 500px;
     }
-    .portal{
-        margin: 0;
+    .portal {
+        margin: 0 0 20px 0;
     }
-    .portal li{
+    .portal li {
         margin: 20px 20px 0 0;
         float: left;
     }
+    .scroll-background {
+        max-width: 100%;
+        display: block;
+        position: static;
+        height: 100%;
+        clear: both;
+        background-color: #fafafa;
+    }
+    .scroll-text h4 {
+        font-size: 24px;
+    }
+    .scroll-text p {
+        font-size: 16px;
+    }
 }
-@media (max-width: 950px){
+
+@media (max-width: 950px) {
     .detail-area .img-section {
         height: 450px;
     }
-    .detail-area h3{
+    .detail-area h3 {
         font-size: 28px;
     }
-
-    .detail-area p{
+    .detail-area p {
         font-size: 16px;
     }
-
-   .sm-gallery{
-       width: 80%;
-       height: 330px;
-   }
 }
 
-@media (max-width: 780px){
+@media (max-width: 780px) {
     .portfolio-detail-box {
         position: relative;
         left: 50px;
-        margin: 150px 0 0;  
+        margin: 150px 0;
     }
     .detail-area .img-section {
         width: 100%;
         height: 360px;
     }
-    .sm-area{
-        margin: 40px 0;
-        position: relative;
-        left: 20px;
+    .scroll-text {
+        position: static;
+        padding-bottom: 20px;
+        display: block;
+        width: 100%;
+    }
+    .scroll-graphic {
+        display: block;
+        width: 100%;
+    }
+
+    .back-btn{
+        background-color: #87ceeb;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .back-btn a {
+        border-radius: 0%;
+        padding:0;
     }
 }
-@media (max-width: 680px){
+
+@media (max-width: 680px) {
     .detail-area .img-section {
         width: 100%;
         height: 320px;
@@ -223,35 +345,32 @@
         width: 100%;
         margin-bottom: 15px;
     }
-    .sm-gallery {
-        width: 100%;
-        height: 300px;
-        margin: auto;
+    .back-btn {
+        top: 0;
     }
 }
-@media (max-width: 550px){
+
+@media (max-width: 550px) {
     .detail-area .img-section {
-        width: 110%;
-
-    }.sm-gallery {
-        height: 260px;
+        width: 100%;
     }
-
 }
-@media (max-width: 480px){
+
+@media (max-width: 480px) {
     .portfolio-detail-box {
         position: relative;
-        left: 20px; 
+        left: 20px;
     }
     .detail-area .img-section {
         width: 115%;
         height: 240px;
     }
 }
-@media (max-width: 400px){
+
+@media (max-width: 400px) {
     .portfolio-detail-box {
         position: relative;
-        left: 20px; 
+        left: 20px;
     }
     .detail-area .img-section {
         width: 100%;
