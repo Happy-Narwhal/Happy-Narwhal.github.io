@@ -145,7 +145,7 @@ body {
 }
 
 #nav ul li a:hover {
-    color:#26b8ff;
+    color: #26b8ff;
 }
 
 .checkbtn {
@@ -230,7 +230,6 @@ body {
     text-align: center;
     margin: 10px 0;
 }
-
 
 /*contact form*/
 
@@ -348,7 +347,6 @@ textarea {
     .main {
         font-size: 34px;
     }
-
 }
 
 /*------------------------------------------------------------------
@@ -406,5 +404,3 @@ textarea {
     visibility: visible;
     opacity: 1;
 }
-
-

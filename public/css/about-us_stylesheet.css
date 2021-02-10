@@ -16,8 +16,8 @@
 
 :root {
     --mainColor: #87ceeb;
-  }
-  
+}
+
 .agency-box span {
     background: linear-gradient( to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
     background-position: 0 100%;
@@ -70,9 +70,9 @@
     text-align: center;
 }
 
-.our-team:first-child{
+.our-team:first-child {
     position: relative;
-    top: 40px; 
+    top: 40px;
 }
 
 .info {
@@ -82,11 +82,13 @@
     width: 70%;
     padding-top: 20px;
 }
-.info ul{
+
+.info ul {
     list-style: none;
 }
-.info .name{
-    font-size: 30px; 
+
+.info .name {
+    font-size: 30px;
     font-weight: bold;
     padding: 10px 0;
 }
@@ -194,14 +196,12 @@
     }
 }
 
-
 @media(max-width: 1250px) {
-
     .info {
         width: 100%;
         padding-top: 20px;
     }
-    .row{
+    .row {
         width: 100%;
     }
     .our-team {
@@ -237,7 +237,6 @@
     .our-team .team-content h3 {
         padding-top: 35%;
     }
-
     .info {
         display: block;
         padding: 0;
@@ -247,45 +246,38 @@
 }
 
 @media (max-width: 858px) {
-    .agency-box{
+    .agency-box {
         width: 90%;
     }
     .our-team:first-child {
         position: relative;
         top: 0
     }
-
     .main {
         font-size: 35px;
     }
-
     .agency-box h2 {
         font-weight: 200;
         font-size: 30px;
         margin-bottom: 100px;
         margin: 60px 0 100px;
     }
-
-    .agency-box h3{
+    .agency-box h3 {
         font-size: 30px;
     }
-
-    .agency-box p{
+    .agency-box p {
         font-size: 18px;
         line-height: 30px;
     }
-    
-    .team-box{
+    .team-box {
         padding-top: 30px;
     }
-
-    .info{
+    .info {
         font-size: 16px;
         line-height: 30px;
         padding: 0;
     }
-
-    .info ul{
+    .info ul {
         margin: 0 0 20px;
     }
 }

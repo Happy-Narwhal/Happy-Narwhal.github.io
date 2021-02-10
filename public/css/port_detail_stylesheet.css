@@ -54,14 +54,17 @@ body {
     float: left;
 }
 
-.detail-area .img-section {
-    width: 100%;
-    height: 400px;
+.detail-area p {
+    width: 80%;
 }
 
-.webimg {
+.img-section {
+    width: 90%;
+}
+
+.img-section img {
     width: 100%;
-    height: 100%;
+    height: auto;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -164,7 +167,8 @@ body {
 
 .scroll-background {
     max-width: 100%;
-    top: 100px;
+    position: relative;
+    top: 150px;
     background-color: #fafafa;
     clear: both;
 }
@@ -265,10 +269,6 @@ body {
         position: relative;
         left: 4 0px;
     }
-    .detail-area .img-section {
-        width: 100%;
-        height: 500px;
-    }
     .portal {
         margin: 0 0 20px 0;
     }
@@ -293,9 +293,6 @@ body {
 }
 
 @media (max-width: 950px) {
-    .detail-area .img-section {
-        height: 450px;
-    }
     .detail-area h3 {
         font-size: 28px;
     }
@@ -310,10 +307,6 @@ body {
         left: 50px;
         margin: 150px 0;
     }
-    .detail-area .img-section {
-        width: 100%;
-        height: 360px;
-    }
     .scroll-text {
         position: static;
         padding-bottom: 20px;
@@ -324,23 +317,18 @@ body {
         display: block;
         width: 100%;
     }
-
-    .back-btn{
+    .back-btn {
         background-color: #87ceeb;
         text-align: center;
         padding: 10px 0;
     }
     .back-btn a {
         border-radius: 0%;
-        padding:0;
+        padding: 0;
     }
 }
 
 @media (max-width: 680px) {
-    .detail-area .img-section {
-        width: 100%;
-        height: 320px;
-    }
     .portal li {
         width: 100%;
         margin-bottom: 15px;
@@ -361,19 +349,11 @@ body {
         position: relative;
         left: 20px;
     }
-    .detail-area .img-section {
-        width: 115%;
-        height: 240px;
-    }
 }
 
 @media (max-width: 400px) {
     .portfolio-detail-box {
         position: relative;
         left: 20px;
-    }
-    .detail-area .img-section {
-        width: 100%;
-        height: 190px;
     }
 }

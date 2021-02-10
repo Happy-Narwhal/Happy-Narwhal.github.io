@@ -361,12 +361,11 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
 }
 
 @media (min-width: 375px) {
-    .meet-section, .plan-section, .develop-section, .launch-section{
+    .meet-section, .plan-section, .develop-section, .launch-section {
         padding: 0;
         width: 85%;
     }
 }
-
 
 /* types */
 
@@ -377,9 +376,10 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
     text-align: left;
 }
 
-.type-section .main{
+.type-section .main {
     padding: 10px 0;
 }
+
 .type-box {
     display: inline-block;
 }
@@ -495,7 +495,6 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
     .steps {
         padding: 10px;
     }
-
     .col-type {
         width: 90%;
     }
