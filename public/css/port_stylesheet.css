@@ -1,132 +1,140 @@
 /* Portfolio Page */
 
 .portfolio-box {
-    margin-top: 170px;
-    max-width: 100%;
-    height: auto;
-    padding-bottom: 10px;
+  margin-top: 170px;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 10px;
 }
 
 .portfolio-box .second {
-    margin: 100px 0;
+  margin: 100px 0;
 }
 
 .port-row {
-    display: grid;
-    overflow: hidden;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 1fr;
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-    width: 90%;
-    margin: auto;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  width: 90%;
+  margin: auto;
 }
 
 .gallery {
-    text-align: center;
-    display: flex;
-    padding: 0.5em;
-    cursor: pointer;
-    margin: 20px;
-    overflow: hidden;
+  text-align: center;
+  display: flex;
+  padding: 0.5em;
+  cursor: pointer;
+  margin: 20px;
+  overflow: hidden;
 }
 
 .port-content {
-    width: 100%;
-    position: relative;
-    background-repeat: no-repeat;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
 }
 
 .port-content img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .gallery:hover .port-content {
-    opacity: 1;
+  opacity: 1;
 }
 
 .port-content span {
-    display: none;
-    font-weight: 200;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    bottom: 0;
-    right: 0;
+  display: none;
+  font-weight: 200;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .port-content h3 {
-    display: none;
-    color: #fff;
-    text-align: center;
-    margin: auto;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    font-size: 18px;
-    font-weight: 700;
-    top: 35%;
+  display: none;
+  color: #fff;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 18px;
+  font-weight: 700;
+  top: 35%;
 }
 
-.gallery:hover .port-content, .gallery:focus .port-content {
-    -ms-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.2);
+.gallery:hover .port-content,
+.gallery:focus .port-content {
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
-.gallery:hover .port-content:before, .gallery:focus .port-content:before {
-    display: block;
+.gallery:hover .port-content:before,
+.gallery:focus .port-content:before {
+  display: block;
 }
 
-.gallery:hover span, .gallery:focus span, .gallery:hover h3, .gallery:focus h3 {
-    display: block;
+.gallery:hover span,
+.gallery:focus span,
+.gallery:hover h3,
+.gallery:focus h3 {
+  display: block;
 }
 
 .port-content:before {
-    content: "";
-    display: none;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(33, 40, 48, 0.75);
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(33, 40, 48, 0.75);
 }
 
 @media (max-width: 1200px) {
-    .port-row {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .port-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-    .portfolio-box {
-        margin-top: 120px;
-    }
-    
-    .portfolio-box .second {
-        margin: 60px 0;
-    }
-    .port-row {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .gallery {
-        width: 100%;
-        margin: 0;
-    }
-    .main {
-        font-size: 35px;
-    }
+  .portfolio-box {
+    margin-top: 120px;
+  }
+
+  .portfolio-box .second {
+    margin: 60px 0;
+  }
+
+  .port-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .gallery {
+    width: 100%;
+    margin: 0;
+  }
+
+  .main {
+    font-size: 35px;
+  }
 }
