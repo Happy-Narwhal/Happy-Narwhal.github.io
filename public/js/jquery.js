@@ -1,6 +1,16 @@
 $(document).ready(function() {
-
   
+  $('.team-card').on('click', function(){
+		
+		if ( $(this).hasClass('open') ) {
+			$(this).removeClass('open');
+		} else {
+			$('.team-card').removeClass('open');
+			$(this).addClass('open');
+		}
+		
+	});
+
   $(".bar1").click(function() {
     $(".meet").prop("checked", true);
   })
@@ -43,4 +53,6 @@ $(document).ready(function() {
         }
     }); 
   });
+
+  
 });

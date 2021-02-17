@@ -1,25 +1,31 @@
-@import url("https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js");
 /* About Us Page */
 
-.agency-box {
+.div-center {
   display: block;
   position: relative;
   width: 80%;
   margin: auto;
 }
 
-.agency-box h2 {
-  font-weight: 200;
+.agency-box {
+  margin-top: 200px;
+  margin-bottom: 140px;
+  display: flex;
+  position: relative;
+}
+
+.left-box {
+  width: 50%;
+  float: left;
+  top: 50%;
+  -ms-transform: translateY(25%);
+  transform: translateY(25%);
+}
+
+.left-box span {
+  padding: 5px 10px;
   font-size: 40px;
-  margin-bottom: 70px;
-  margin: 120px 0 100px;
-}
-
-:root {
-  --mainColor: #87ceeb;
-}
-
-.agency-box span {
+  font-weight: 900;
   background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
@@ -29,23 +35,24 @@
   transition: background-size .2s;
 }
 
-.agency-box span:hover {
+.left-box span:hover {
   background-size: 4px 50px;
 }
 
-.agency-box h3 {
-  font-size: 35px;
+.left-box p {
+  font-size: 20px;
 }
 
-.about-contain {
-  background: #ffffff;
-  padding: 120px 0 0 0;
-  width: 100%;
-  position: relative;
-  max-width: 100%;
+.right-box {
+  width: 50%;
+  float: left;
 }
 
-#shawdow-root .toolbar{
+:root {
+  --mainColor: #87ceeb;
+}
+
+#shawdow-root .toolbar {
   opacity: 0;
 }
 
@@ -54,6 +61,19 @@
   display: block;
   height: 100%;
   padding-bottom: 10px;
+}
+
+.team-info {
+  overflow: hidden;
+  padding: 100px 0;
+  width: 100%;
+  background-color: #f5f6fa;
+}
+
+.team-info .left-box {
+  width: 40%;
+  text-align: center;
+  font-size: 25px;
 }
 
 .row {
@@ -126,177 +146,147 @@
   transition: all 0.5s ease-out 0s;
 }
 
-.our-team .team-content h3 {
-  padding-top: 35%;
+.card-container {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.our-team:hover .team-content {
-  opacity: 0.8;
+.team-card {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg) translateX(0px) translateY(0px);
+  transition: all 0.6s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+  margin: 15px;
+  cursor: pointer;
 }
 
-.our-team .title {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin: 0 0 8px 0;
-  opacity: 0;
-  transform: rotate(-90deg);
-  transition: all 0.3s ease-in-out 0.2s;
+.team-card:hover {
+  transform: rotateY(45deg) translateX(0px) translateY(0px);
 }
 
-.our-team:hover .title {
-  opacity: 1;
-  transform: scale(1);
-  transition-delay: 0.1s;
+.open, .open:hover {
+  width: 500px;
+  height: 700px;
+  transform: rotateY(-180deg) translateX(0px) translateY(0px);
 }
 
-.our-team .post {
-  display: block;
-  font-size: 17px;
-  margin-bottom: 15px;
-  opacity: 0;
-  transform: scale(1.2);
-  transition: all 0.3s ease-in-out 0.2s;
+.picture-side {
+  transform: rotateY( 0deg) translateZ( 2px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.our-team:hover .post {
-  opacity: 1;
-  transform: scale(1);
+.profile1 {
+  background-image: url(../images/bjorn.jpg);
 }
 
-.our-team .icon {
+.profile2 {
+  background-image: url(../images/rachel.jpg);
+}
+
+.profile3 {
+  background-image: url(../images/bowon.jpg);
+}
+
+.back {
+  transform: rotateY( 180deg) translateZ( 0px);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.back h3 {
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.back .title{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.back p {
+  font-size: 14px;
+  margin: 0;
+  width: 80%;
+}
+
+.icon {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.our-team .icon li {
+.icon li {
   display: inline-block;
 }
 
-.our-team .icon li a {
+.icon li a {
   display: block;
   width: 35px;
   height: 35px;
   line-height: 35px;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 1px solid #a29bfe ;
   font-size: 18px;
-  color: #fff;
+  color: #a29bfe;
   margin-right: 6px;
   transition: all 0.3s ease 0s;
 }
 
-.our-team .icon li a:hover {
-  background: #0f3b97;
-  border: 1px solid #0f3b97;
-}
-
-@media(max-width: 1420px) {
-  .info {
-    float: left;
-    width: 65%;
-    padding-top: 20px;
-  }
-}
-
-@media(max-width: 1250px) {
-  .info {
-    width: 100%;
-    padding-top: 20px;
-  }
-
-  .row {
-    width: 100%;
-  }
-
-  .our-team {
-    padding: 30px 0;
-    display: block;
-    width: 100%;
-    height: 300px;
-    text-align: center;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-  }
-
-  .our-team img {
-    width: 280px;
-    height: 280px;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .our-team .team-content {
-    height: 310px;
-    width: 310px;
-    display: block;
-    margin: auto;
-    background: linear-gradient(to right, #a29bfe 0%, #87ceeb 100%);
-    border-radius: 50%;
-    color: #fff;
-    opacity: 0;
-    position: relative;
-    top: -295px;
-    transition: all 0.5s ease-out 0s;
-  }
-
-  .our-team .team-content h3 {
-    padding-top: 35%;
-  }
-
-  .info {
-    display: block;
-    padding: 0;
-    width: 90%;
-    padding-left: 40px;
-  }
+.icon li a:hover {
+  background: #26b8ff;  
+  border: 1px solid #26b8ff;
+  color: white;
 }
 
 @media (max-width: 858px) {
-  .agency-box {
+  .div-center {
     width: 90%;
   }
-
-  .our-team:first-child {
-    position: relative;
-    top: 0
-  }
-
-  .main {
-    font-size: 35px;
-  }
-
-  .agency-box h2 {
+  .div-center h2 {
     font-weight: 200;
     font-size: 30px;
     margin-bottom: 100px;
     margin: 60px 0 100px;
   }
-
-  .agency-box h3 {
+  .div-center h3 {
     font-size: 30px;
   }
-
-  .agency-box p {
+  .div-center p {
     font-size: 18px;
     line-height: 30px;
   }
-
   .team-box {
     padding-top: 30px;
-  }
-
-  .info {
-    font-size: 16px;
-    line-height: 30px;
-    padding: 0;
-  }
-
-  .info ul {
-    margin: 0 0 20px;
   }
 }
