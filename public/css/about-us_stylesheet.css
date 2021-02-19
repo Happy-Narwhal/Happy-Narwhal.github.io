@@ -1,12 +1,5 @@
 /* About Us Page */
 
-.div-center {
-  display: block;
-  position: relative;
-  width: 80%;
-  margin: auto;
-}
-
 .agency-box {
   margin-top: 200px;
   margin-bottom: 140px;
@@ -26,13 +19,6 @@
   padding: 5px 10px;
   font-size: 40px;
   font-weight: 900;
-  background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
-  background-position: 0 100%;
-  background-repeat: repeat-x;
-  background-size: 4px 4px;
-  color: #000;
-  text-decoration: none;
-  transition: background-size .2s;
 }
 
 .left-box span:hover {
@@ -229,7 +215,7 @@
   margin: 10px 0;
 }
 
-.back .title{
+.back .title {
   font-size: 20px;
   margin-bottom: 20px;
 }
@@ -256,7 +242,7 @@
   height: 35px;
   line-height: 35px;
   border-radius: 50%;
-  border: 1px solid #a29bfe ;
+  border: 1px solid #a29bfe;
   font-size: 18px;
   color: #a29bfe;
   margin-right: 6px;
@@ -264,9 +250,9 @@
 }
 
 .icon li a:hover {
-  background: #26b8ff;  
+  background: #26b8ff;
   border: 1px solid #26b8ff;
-  color: white;
+  color: #fff;
 }
 
 @media (max-width: 858px) {

@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url("https://use.typekit.net/ick5ppl.css");
-
 html {
   margin: 0;
   padding: 0;
@@ -28,6 +27,51 @@ body {
   list-style: none;
   margin: 0;
   max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, .main {
+  font-family: montserrat, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.main {
+  font-size: 45px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.title .main {
+  color: #fff;
+}
+
+.underline {
+  background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
+  color: #000;
+  text-decoration: none;
+  transition: background-size .2s;
+}
+
+input[type="radio"] {
+  display: none;
+  position: absolute
+}
+
+@media (max-width: 858px) {
+  h1, h2, h3, .main {
+    font-size: 35px;
+  }
 }
 
 /* navigation bar*/
@@ -100,7 +144,6 @@ body {
   line-height: 0px;
   position: relative;
   display: inline-block;
-  margin: 0;
   height: 21px;
 }
 
@@ -122,17 +165,17 @@ body {
   transition: 0.5s
 }
 
-#nav ul li a:before{
+#nav ul li a:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 3px;
   top: 15px;
   bottom: 0;
-  background: #26b8ff;  
+  background: #26b8ff;
   transform: scaleX(0);
   transition: all 0.6s;
-  transform-origin:center;
+  transform-origin: center;
 }
 
 #nav ul li a:hover:before {
@@ -171,7 +214,7 @@ body {
     margin: 0;
     width: 100%;
     height: 320px;
-    background: white;
+    background: #fff;
     top: 95px;
     left: -100%;
     text-align: center;
@@ -207,7 +250,7 @@ body {
   }
 }
 
-.headline {
+.headline, .headline-text {
   width: 100px;
   padding: 0;
   margin: 0 auto;
@@ -217,13 +260,11 @@ body {
   border-radius: 10px;
 }
 
-.main {
-  font-family: montserrat, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 45px;
-  text-align: center;
-  margin: 20px 0;
+.div-center {
+  display: block;
+  position: relative;
+  width: 80%;
+  margin: auto;
 }
 
 /*contact form*/
@@ -252,7 +293,7 @@ body {
 }
 
 .title h2 {
-  color: white;
+  color: #fff;
   text-align: center;
   margin: 10px 0 30px;
   font-size: 50px;
@@ -310,7 +351,7 @@ textarea {
   display: block;
   width: 50%;
   background-image: linear-gradient(to right, #a29bfe 0%, #87ceeb 100%);
-  color: white;
+  color: #fff;
   border: 0;
   padding: 12px;
   font-size: 20px;
@@ -355,7 +396,7 @@ textarea {
   content: attr(data-validate);
   position: absolute;
   max-width: 70%;
-  background-color: white;
+  background-color: #fff;
   border: 1px solid #c80000;
   border-radius: 13px;
   padding: 4px 25px 4px 10px;

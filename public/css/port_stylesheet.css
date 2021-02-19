@@ -78,8 +78,7 @@
   top: 35%;
 }
 
-.gallery:hover .port-content,
-.gallery:focus .port-content {
+.gallery:hover .port-content, .gallery:focus .port-content {
   -ms-transform: scale(1.2);
   -moz-transform: scale(1.2);
   -webkit-transform: scale(1.2);
@@ -87,15 +86,11 @@
   transform: scale(1.2);
 }
 
-.gallery:hover .port-content:before,
-.gallery:focus .port-content:before {
+.gallery:hover .port-content:before, .gallery:focus .port-content:before {
   display: block;
 }
 
-.gallery:hover span,
-.gallery:focus span,
-.gallery:hover h3,
-.gallery:focus h3 {
+.gallery:hover span, .gallery:focus span, .gallery:hover h3, .gallery:focus h3 {
   display: block;
 }
 
@@ -120,18 +115,14 @@
   .portfolio-box {
     margin-top: 120px;
   }
-
   .portfolio-box .second {
     margin: 60px 0;
   }
-
   .port-row {
     grid-template-columns: repeat(1, 1fr);
   }
-
   .gallery {
     width: 100%;
     margin: 0;
   }
-
 }

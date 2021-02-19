@@ -1,0 +1,179 @@
+.services-box {
+  margin-top: 150px;
+}
+
+.types-list-box {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-top: 40px;
+}
+
+ul.tNav {
+  display: inline;
+  position: relative;
+  border-bottom: 2px solid #87ceeb;
+  overflow: hidden;
+}
+
+.tNav li {
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all .3s ease;
+  vertical-align: middle;
+  position: relative;
+}
+
+ul.tNav li .type-box {
+  width: 100%;
+  padding: 20px 0;
+  bottom: 0;
+  font-size: 20px;
+  font-weight: bolder;
+  border: 2px solid #fff;
+}
+
+ul.tNav li.active, ul.tNav li:hover {
+  color: white;
+  background: linear-gradient(to right, #a29bfe 0%, #87ceeb 100%);
+  font-weight: bold;
+}
+
+.service-contents {
+  position: relative;
+  display: flex;
+  overflow: visible;
+}
+
+.service-contents section h2 {
+  font-weight: bold;
+  font-size: 25px;
+  padding: 80px 0 20px;
+  line-height: 0px;
+  text-transform: uppercase;
+}
+
+.service-contents section ul {
+  margin: auto;
+}
+
+.development:checked~.types-list-box .tNav li.box1::before, .design:checked~.types-list-box .tNav li.box2::before {
+  border: 2px solid #fff;
+  background: linear-gradient(to right, #a29bfe 0%, #87ceeb 100%);
+  transition: all .3 ease;
+}
+
+.development-section, .design-section {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  transform: scale(0);
+  transform-origin: center bottom;
+  position: absolute;
+  top: 0;
+}
+
+.development:checked~.service-contents .development-section, .design:checked~.service-contents .design-section {
+  display: block;
+  transform: scale(1);
+  transform-origin: bottom;
+}
+
+/*development sub categories*/
+
+.dev-list-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 40px 0;
+}
+
+ul.dNav {
+  display: inline;
+  position: relative;
+  overflow: hidden;
+}
+
+.dNav li {
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all .3s ease;
+  vertical-align: middle;
+  position: relative;
+  opacity: 0.5;
+}
+
+ul.dNav li::after {
+  content: '';
+  width: 60%;
+  height: 10px;
+  margin: auto;
+  display: block;
+  transition: all .3s ease;
+}
+
+ul.dNav li:hover::after {
+  background: linear-gradient(to right, #a29bfe 0%, #87ceeb 100%);
+}
+
+.website:checked~.dev-list-box .dNav li.dev1::after, .other:checked~.dev-list-box .dNav li.dev2::after, .tech:checked~.dev-list-box .dNav li.dev3::after {
+  border: 2px solid #fff;
+  background: linear-gradient(to right, #a29bfe 0%, #87ceeb 100%);
+  transition: all .3 ease;
+}
+
+ul.dNav li .dev-type-box {
+  width: 100%;
+  padding: 20px 0;
+  bottom: 0;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+ul.dNav li.open, ul.dNav li:hover {
+  color: black;
+  opacity: 1;
+  font-weight: bold;
+}
+
+.development-contents {
+  position: relative;
+  display: flex;
+  overflow: visible;
+}
+
+.website-section, .other-section, .tech-section {
+  width: 100%;
+  padding: 4 0px;
+}
+
+.website-section, .other-section, .tech-section {
+  transform: scale(0);
+  transform-origin: center bottom;
+  position: absolute;
+  top: 0;
+}
+
+.website:checked~.development-contents .website-section, .other:checked~.development-contents .other-section, .tech:checked~.development-contents .tech-section {
+  display: block;
+  transform: scale(1);
+  transform-origin: bottom;
+}
+
+.left-box {
+  width: 70%;
+  float: left;
+  -ms-transform: translateY(25%);
+  transform: translateY(25%);
+}
+
+.right-box {
+  width: 30%;
+  float: right;
+}
