@@ -86,8 +86,8 @@ input[type="radio"] {
 }
 
 .animation {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   position: absolute;
   top: 10px;
@@ -133,7 +133,7 @@ input[type="radio"] {
   left: 0;
   width: 100%;
   text-align: right;
-  padding: 40px 0;
+  padding: 35px 0;
   z-index: 90;
   overflow: hidden;
   font-weight: bold;
@@ -239,7 +239,7 @@ input[type="radio"] {
     left: 0;
   }
   .animation .logo {
-    width: 80px;
+    width: 70px;
   }
   .typo .logo {
     width: 150px;

@@ -1,6 +1,10 @@
 require 'sinatra'
 require 'pry' unless ENV['RACK_ENV'] == 'production'
 
+set :bind, "0.0.0.0"
+port = ENV["PORT"] || "8080"
+set :port, port
+
 set :views, File.dirname(__FILE__) + '/views'
 # set :public_folder, File.dirname(__FILE__) + '/public'
 
