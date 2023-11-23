@@ -388,10 +388,14 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
   top: 0;
 }
 
+.steps img {
+  max-width: 100%;
+}
+
 @media (max-width: 1600px) {
   .row-type {
     padding: 0 10px;
-    width: 22%;
+    width: 24%;
   }
 }
 

@@ -1,0 +1,68 @@
+{% if page.title %}
+  {% assign title = page.title %}
+{% else %}
+  {% assign title = site.title %}
+{% endif %}
+
+{% if page.collection == 'posts' %}
+  {% assign description = page.excerpt | strip_html | strip_newlines %}
+{% else %}
+  {% if page.description %}
+    {% assign description = page.description %}
+  {% else %}
+    {% assign description = site.description %}
+  {% endif %}
+{% endif %}
+
+{% if page.og_image %}
+  {% assign image = page.og_image | absolute_url %}
+{% else %}
+  {% assign image = '/assets/images/opengraph.png' | absolute_url %}
+{% endif %}
+
+{% assign url = page.url  | absolute_url %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Narwhal</title>
+</head>
+
+In Head.html
+
+
+<head>
+  <title>{{ site.title }} &mdash; {% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}</title>
+  <meta charset="utf-8" />
+  <meta content="ie=edge" http-equiv="x-ua-compatible" />
+  <meta name="handheldfriendly" content="true" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ description }}" />
+
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:image" content="{{ image }}" />
+  <meta property="og:url" content="{{ url }}" />
+  <meta property="og:type" content="{% if page.collection == 'posts' %}article{% else %}website{% endif %}" />
+
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="{{ image }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@{{ site.twitter }}" />
+  <meta name="twitter:image:alt" content="{{ site.title }}" />
+
+  <script defer data-domain="rubyonrails.org" src="https://plausible.io/js/script.js"></script>
+  <link rel="icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" type="image/png" href="/assets/images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/stylesheet.css" />
+  <link rel="stylesheet" href="/assets/css/layout_stylesheet.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="/assets/js/jquery.js"></script>
+  <script src="/assets/js/site.js"></script>
+  <script src="/assets/js/main.js"></script>
+
+  <link rel="alternate" type="application/rss+xml"  href="{{ site.feed_path }}" title="The official {{ site.title }} blog">
+</head>

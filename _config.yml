@@ -1,0 +1,34 @@
+title: Happy Narwhal
+description: Modern Software Development
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+collections:
+  pages:
+    output: true
+    permalink: "/:name"
+  portfolio:
+    output: true
+    permalink: "/portfolio/:path"
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "base"
+  - scope:
+      path: ""
+      type: "portfolio"
+    values:
+      layout: "portfolio"
+      permalink: "/:name"
+
+markdown: kramdown
+highlighter: rouge
+paginate: 10
+sass:
+  style: :compressed

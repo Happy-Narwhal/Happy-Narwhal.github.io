@@ -1,10 +1,10 @@
-### Google Cloud Run Deploying
-#
+# Happy Narwhal - behind the scenes
 
-<!-- To make this the default region, run `gcloud config set run/region us-central1`.
+This repository generates the [Happy Narwhal website](Happy-Narwhal.github.io).
+We're using [Github Pages](https://jekyllrb.com/docs/github-pages/) with (Jekyll)[https://github.com/jekyll/jekyll].
 
-This command is equivalent to running `gcloud builds submit --tag [IMAGE] /home/bjorn/Insync/bjornishungry@gmail.com/Google Drive/Projects/HappyNarwhal` and `gcloud run deploy happynarwhal --image [IMAGE]` -->
+## Jekyll
 
-# Use `gcloud run deploy --source .` to deploy the current directory.
-
-# To make this the default region, run `gcloud config set run/region us-central1`.
+1. `bundle install`
+2. `bundle exec jekyll serve`
+3. Go to `http://localhost:4000/`

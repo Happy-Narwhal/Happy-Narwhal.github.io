@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-ruby '3.2.2'
+source "https://rubygems.org"
+# ruby '3.2.2'
 
-gem 'sinatra'
-gem 'pry'
+gem "webrick", "~> 1.8"
+gem "github-pages", group: :jekyll_plugins

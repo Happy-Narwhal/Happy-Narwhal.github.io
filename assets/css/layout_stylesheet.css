@@ -43,6 +43,10 @@ h1, h2, h3, .main {
   font-style: normal;
 }
 
+img {
+  max-width: 100%;
+}
+
 .main {
   font-size: 45px;
   text-align: center;
