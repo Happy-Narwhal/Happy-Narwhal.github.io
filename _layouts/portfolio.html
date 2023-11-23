@@ -6,48 +6,49 @@
 <body>
 
   {% include nav.html %}
+  <div class="page-wrapper">
 
-  <div class="portfolio-detail-box div-center">
-      <div class="portNav">
-          <a id="top"></a>
-          <a href="portfolio.html"><i class="fa fa-th-large" aria-hidden="true"></i></a>
-          <a href="portfolio/calico.html"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-      </div>
+    <div class="portfolio-detail-box div-center">
+        <div class="portNav">
+            <a id="top"></a>
+            <a href="/portfolio.html"><i class="fa fa-th-large" aria-hidden="true"></i></a>
+            <a href="portfolio/calico.html"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
 
-      <div class="tech-area">
+        <div class="tech-area">
+            <div class="portal">
+                <ul>
+                    <li>
+                        <a href="/portfolio.html" class="portal-btn">Back to Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-details">
+        <div class="scroll-section">
+            <div class="back-btn">
+                <a href="#top"><i class="fa fa-angle-up" style="font-size: 36px"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="layout">
+      <div class="post common-padding--bottom common-padding--top-small">
+        <div class="container">
+          <div class="post__content common-content common-content--post">
+            {{ content }}
+          </div>
           <div class="portal">
               <ul>
-                  <li>
-                      <a href="portfolio.html" class="portal-btn">Back to Portfolio</a>
-                  </li>
+                  <li><a href="/portfolio.html" class="portal-btn">Back to Portfolio</a></li>
               </ul>
           </div>
-      </div>
-  </div>
-
-  <div class="project-details">
-      <div class="scroll-section">
-          <div class="back-btn">
-              <a href="#top"><i class="fa fa-angle-up" style="font-size: 36px"></i></a>
-          </div>
-      </div>
-  </div>
-
-  <div class="layout">
-    <div class="post common-padding--bottom common-padding--top-small">
-      <div class="container">
-        <div class="post__content common-content common-content--post">
-          {{ content }}
-        </div>
-        <div class="portal">
-            <ul>
-                <li><a href="/portfolio.html" class="portal-btn">Back to Portfolio</a></li>
-            </ul>
         </div>
       </div>
     </div>
   </div>
-
   {% include footer.html %}
 </body>
 </html>

@@ -43,10 +43,6 @@ h1, h2, h3, .main {
   font-style: normal;
 }
 
-img {
-  max-width: 100%;
-}
-
 .main {
   font-size: 45px;
   text-align: center;
@@ -55,6 +51,10 @@ img {
 
 .title .main {
   color: #fff;
+}
+
+img {
+  max-width: 100%;
 }
 
 .underline {
@@ -76,6 +76,10 @@ input[type="radio"] {
   h1, h2, h3, .main {
     font-size: 35px;
   }
+}
+
+.page-wrapper {
+  margin-top: 107px;
 }
 
 /* navigation bar*/
