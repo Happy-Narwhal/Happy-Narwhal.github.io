@@ -344,10 +344,13 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
   display: inline-block;
 }
 
+.col-3-sm-1 {
+  width: 33%;
+}
+
 .row-type {
   margin-left: auto;
   float: left;
-  width: 20%;
   padding: 0 30px;
   text-align: center;
   transition: all .2s ease-in-out;
@@ -359,9 +362,18 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
   border: 2px solid #fff;
   border-radius: 8px;
   box-shadow: 0 15px 30px rgba(102, 113, 228, 0.13);
-  height: 470px;
+  height: 510px;
   margin: 20px 0;
   transition: all .2s ease-in-out;
+}
+
+@media (max-width: 782px) {
+  .col-3-sm-1 {
+    width: 100%;
+  }
+  .col-type {
+    height: 250px;
+  }
 }
 
 .col-type:hover {
@@ -395,7 +407,6 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
 @media (max-width: 1600px) {
   .row-type {
     padding: 0 10px;
-    width: 24%;
   }
 }
 
@@ -411,15 +422,12 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
   }
   .row-type {
     padding: 0 10px;
-    width: 100%;
   }
   .col-type {
     width: 80%;
     margin: 20px auto;
-    height: 200px;
   }
   .col-type p {
-    line-height: normal;
     padding: 0 10px;
   }
   .steps {
