@@ -54,6 +54,10 @@
   justify-content: center;
 }
 
+.col-2 {
+  max-width: 49%;
+}
+
 /* responsive */
 
 @media (max-width: 1200px) {
@@ -230,7 +234,7 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
   margin-top: 20px;
 }
 
-.meet-section, .plan-section, .develop-section, .launch-section {
+.tech-stacks section {
   width: 100%;
   margin: auto;
   border-radius: 4px;
@@ -252,7 +256,7 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
   text-align: center;
 }
 
-.meet:checked~.process-head .pNav li.bar1::before, .plan:checked~.process-head .pNav li.bar1::before, .plan:checked~.process-head .pNav li.bar2::before, .develop:checked~.process-head .pNav li.bar1::before, .develop:checked~.process-head .pNav li.bar2::before, .develop:checked~.process-head .pNav li.bar3::before, .launch:checked~.process-head .pNav li.bar1::before, .launch:checked~.process-head .pNav li.bar2::before, .launch:checked~.process-head .pNav li.bar3::before, .launch:checked~.process-head .pNav li.bar4::before {
+.stacks:checked~.process-head .pNav li.bar1::before, .plan:checked~.process-head .pNav li.bar1::before, .plan:checked~.process-head .pNav li.bar2::before, .develop:checked~.process-head .pNav li.bar1::before, .develop:checked~.process-head .pNav li.bar2::before, .develop:checked~.process-head .pNav li.bar3::before, .launch:checked~.process-head .pNav li.bar1::before, .launch:checked~.process-head .pNav li.bar2::before, .launch:checked~.process-head .pNav li.bar3::before, .launch:checked~.process-head .pNav li.bar4::before {
   border: 2px solid #fff;
   background: #87ceeb;
   transition: all .3 ease;
@@ -270,14 +274,14 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
   width: 100%;
 }
 
-.meet-section, .plan-section, .develop-section, .launch-section {
+.tech-stacks section {
   transform: scale(0);
   transform-origin: center bottom;
   position: absolute;
   top: 0;
 }
 
-.meet:checked~.contents .meet-section, .plan:checked~.contents .plan-section, .develop:checked~.contents .develop-section, .launch:checked~.contents .launch-section {
+.stacks:checked~.contents section {
   display: block;
   transform: scale(1);
   transform-origin: bottom;
@@ -309,7 +313,7 @@ ul.pNav li:hover::after, ul.pNav li.active::after {
   .contents section p {
     font-size: 14px;
   }
-  .meet-section, .plan-section, .develop-section, .launch-section {
+  .tech-stacks section {
     display: block;
     position: relative;
     padding: 0 20px;

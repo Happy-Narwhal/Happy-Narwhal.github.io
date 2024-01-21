@@ -35,6 +35,10 @@ ul {
   margin: 0;
 }
 
+ul.bullet {
+  list-style-type: circle;  
+}
+
 h1, h2, h3, .main {
   font-family: montserrat, sans-serif;
   margin: 0;

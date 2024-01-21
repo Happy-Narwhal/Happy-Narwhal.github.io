@@ -1,4 +1,4 @@
-.services-box {
+.top-section {
   margin-top: 150px;
 }
 
@@ -44,6 +44,22 @@
 }
 
 /*development sub categories*/
+
+.left-col {
+  width: 50%;
+  float: left;
+  padding-right: 15px;
+}
+
+.planning-image {
+  position: relative;
+  float: left;
+  width: 50%;
+}
+
+.planning-image  img {
+  height: auto;
+}
 
 .dev-list-box {
   position: relative;
