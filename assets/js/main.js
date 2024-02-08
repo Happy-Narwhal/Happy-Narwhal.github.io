@@ -9,9 +9,10 @@
   var phone = $('.validate-input input[name="phone"]');
   var budget = $('.validate-input input[name="budget"]');
   var message = $('.validate-input textarea[name="message"]');
-
+  var validm = $('.validate-message');
 
   $('.validate-form').on('submit', function (e) {
+
     var check = true;
 
     if ($(name).val().trim() == '') {
@@ -39,30 +40,29 @@
       showValidate(message);
       check = false;
     }
-    if (!check)
-      return false;
 
     e.preventDefault();
 
+    if (!check)
+      return false;
+
     $.ajax({
-      url: "https://script.google.com/macros/s/AKfycbxDcNvhFX8MzAdJg47Q_mR7xxDkolYzYKDZS3t_gZGiT8waL-TrBheZovsGK9lYvP_tyg/exec",
+      url: "https://script.google.com/macros/s/AKfycbxwLBatp-RP7v2UWSffxSCCqrpIZLnol4uQa6qYuyHfoGs3J1EAr2UkyLFpcw_HJYs37w/exec",
       method: "POST",
       dataType: "json",
       data: $(".contact1-form").serialize(),
       success: function (response) {
-
         if (response.result == "success") {
           $('.contact1-form')[0].reset();
-          alert('Thank you for contacting us.');
+          alert('Your message is en route.');
           return true;
         }
         else {
-          alert("Something went wrong. Please try again.")
+          alert("Something went awry. This must be a sign of the end.")
         }
       },
-      error: function () {
-
-        alert("Something went wrong. Please try again.")
+      error: function (response) {
+        alert("Something went awry. This must be a sign of the end.")
       }
     })
   });
@@ -78,12 +78,15 @@
     var thisAlert = $(input).parent();
 
     $(thisAlert).addClass('alert-validate');
+
+    $(validm)[0].style.display = 'block';
   }
 
   function hideValidate(input) {
     var thisAlert = $(input).parent();
 
     $(thisAlert).removeClass('alert-validate');
+    $(validm)[0].style.display = 'none';
   }
 
 })(jQuery);

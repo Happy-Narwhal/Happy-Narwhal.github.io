@@ -36,7 +36,7 @@ ul {
 }
 
 ul.bullet {
-  list-style-type: circle;  
+  list-style-type: circle;
 }
 
 h1, h2, h3, .main {
@@ -313,6 +313,12 @@ input[type="radio"] {
 
 .container-contact1 {
   width: 1163px;
+}
+
+.validate-message {
+  display: none;
+  text-align: center;
+  color: #fff;
 }
 
 input {
