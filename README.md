@@ -1,6 +1,6 @@
 # Happy Narwhal - behind the scenes
 
-This repository generates the [Happy Narwhal website](Happy-Narwhal.github.io).
+This repository generates the [Happy Narwhal website](https://happy-narwhal.github.io/).
 We're using [Github Pages](https://jekyllrb.com/docs/github-pages/) with (Jekyll)[https://github.com/jekyll/jekyll].
 
 ## Jekyll

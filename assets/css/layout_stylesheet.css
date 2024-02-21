@@ -212,10 +212,11 @@ input[type="radio"] {
   display: none;
 }
 
+/* nav ul height 320 with another link*/
+
 @media (max-width: 960px) {
   nav {
     margin: 0;
-    height: 35px;
   }
   .checkbtn {
     display: block;
@@ -225,7 +226,7 @@ input[type="radio"] {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: 320px;
+    height: 240px;
     background: #fff;
     top: 95px;
     left: -100%;
