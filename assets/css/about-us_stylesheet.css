@@ -226,6 +226,24 @@
   width: 80%;
 }
 
+.picture-side.textonly {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+
+}
+
 .icon {
   padding: 0;
   margin: 0;
