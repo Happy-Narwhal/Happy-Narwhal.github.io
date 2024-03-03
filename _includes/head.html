@@ -1,14 +1,11 @@
-{% if page.title %}
-  {% assign title = page.title %}
+{% assign title = site.title | append: ' ' | append:  page.title %}
+{% assign description = page.description ? page.description : site.description %}
+{% assign image = '/assets/images/logo.jpg' %}
+{% if page.type %}
+  {% assign type = page.type %}
 {% else %}
-  {% assign title = site.title %}
+  {% assign type = 'website' %}
 {% endif %}
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Narwhal</title>
-</head>
 
 <head>
   <meta charset="utf-8" />
@@ -22,7 +19,7 @@
   <meta property="og:description" content="{{ description }}" />
   <meta property="og:image" content="{{ image }}" />
   <meta property="og:url" content="{{ url }}" />
-  <meta property="og:type" content="{% if page.collection == 'posts' %}article{% else %}website{% endif %}" />
+  <meta property="og:type" content="{{ type }}" />
 
   <meta name="twitter:title" content="{{ title }}" />
   <meta name="twitter:description" content="{{ description }}" />
