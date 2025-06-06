@@ -3,3 +3,6 @@ source "https://rubygems.org"
 
 gem "webrick", "~> 1.8"
 gem "github-pages", group: :jekyll_plugins
+
+# https://github.com/apache/arrow-site/issues/447
+gem 'logger'
