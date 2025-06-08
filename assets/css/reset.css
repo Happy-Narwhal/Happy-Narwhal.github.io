@@ -1,0 +1,74 @@
+/* Import fonts */
+@import url("fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://use.typekit.net/ick5ppl.css");
+
+/* Reset */
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  max-width: 100%;
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  font-family: var(--font-primary);
+  margin: 0;
+  max-width: 100%;
+}
+
+/* Typography */
+h1, h2, h3, .main {
+  font-family: var(--font-heading);
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Lists */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.bullet {
+  list-style-type: disc;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form elements */
+input[type="radio"] {
+  display: none;
+  position: absolute;
+}
+
+/* Layout elements */
+article, nav, section {
+  display: block;
+}
+
+/* Page wrapper */
+.page-wrapper {
+  margin-top: var(--nav-height);
+} 
