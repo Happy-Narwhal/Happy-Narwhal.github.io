@@ -57,12 +57,12 @@
   h1, h2, h3, .main {
     font-size: 35px;
   }
-  
+
   .main {
     font-size: 35px;
     margin: var(--spacing-sm) 0;
   }
-  
+
   .title h2 {
     font-size: 25px;
   }
@@ -73,12 +73,12 @@
     font-size: 30px;
     margin: var(--spacing-xs) 0;
   }
-  
+
   .headline, .headline-text {
     font-size: 35px;
   }
-  
+
   .contact-subtext {
     font-size: 18px;
   }
-} 
+}

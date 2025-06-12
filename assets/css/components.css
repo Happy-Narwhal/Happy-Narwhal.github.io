@@ -169,17 +169,17 @@
   .process-head {
     display: none;
   }
-  
+
   .contents {
     height: auto;
     margin-top: var(--spacing-lg);
   }
-  
+
   .contents section h2 {
     font-size: 20px;
     padding: var(--spacing-lg) 0 var(--spacing-sm);
   }
-  
+
   .tech-stacks section {
     padding: var(--spacing-md);
   }
@@ -197,4 +197,4 @@
   .contact1-form-btn {
     width: 100%;
   }
-} 
+}
