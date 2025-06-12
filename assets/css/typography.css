@@ -29,7 +29,7 @@
   transition: background-size var(--transition-base);
 }
 
-.headline, .headline-text {
+.headline, .headline-bar {
   font-family: var(--font-heading);
   font-size: 45px;
   font-weight: 700;
@@ -74,7 +74,7 @@
     margin: var(--spacing-xs) 0;
   }
 
-  .headline, .headline-text {
+  .headline, .headline-bar {
     font-size: 35px;
   }
 

@@ -69,14 +69,14 @@
 }
 
 /* Steps utilities */
-.steps {
+.figure {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: var(--spacing-xl) 0;
 }
 
-.steps img {
+.figure img {
   max-width: 100%;
   height: auto;
 }

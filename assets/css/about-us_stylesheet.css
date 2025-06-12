@@ -1,8 +1,6 @@
 /* About Us Page */
 
 .agency-box {
-  margin-top: 200px;
-  margin-bottom: 140px;
   display: flex;
   position: relative;
 }
@@ -62,7 +60,7 @@
   font-size: 25px;
 }
 
-.row {
+.row_old {
   display: block;
   position: relative;
   width: 80%;
