@@ -27,7 +27,7 @@
 }
 
 .type-section .main {
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: 0;
 }
 
 .type-box {

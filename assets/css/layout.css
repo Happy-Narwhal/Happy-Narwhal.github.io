@@ -22,6 +22,12 @@
   margin-left: auto;
 }
 
+
+.page-wrapper {
+  margin-top: 107px;
+  padding: 0 20px;
+}
+
 @media (min-width: 576px) {
   .container-sm, .container {
     max-width: 540px;
@@ -62,7 +68,6 @@
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
-  width: 85%;
   position: relative;
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
@@ -76,6 +81,12 @@
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
+}
+
+.content-container {
+  display: flex;
+  position: relative;
+  width: 85%;
 }
 
 .col-auto {
