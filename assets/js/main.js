@@ -7,7 +7,8 @@
   var name = $('.validate-input input[name="name"]');
   var email = $('.validate-input input[name="email"]');
   var phone = $('.validate-input input[name="phone"]');
-  var budget = $('.validate-input input[name="budget"]');
+  var website = $('.validate-input input[name="website"]');
+  var project = $('.validate-input input[name="project"]');
   var message = $('.validate-input textarea[name="message"]');
   var validm = $('.validate-message');
 
@@ -20,8 +21,8 @@
       check = false;
     }
 
-    if ($(budget).val().trim() == '') {
-      showValidate(budget);
+    if ($(website).val().trim() == '') {
+      showValidate(website);
       check = false;
     }
 

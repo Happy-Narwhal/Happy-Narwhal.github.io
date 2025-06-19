@@ -22,16 +22,11 @@
 /* Type utilities */
 .type-section {
   width: 100%;
-  margin: var(--spacing-xl) auto;
   padding: 0 var(--spacing-lg);
 }
 
 .type-section .main {
   margin-bottom: 0;
-}
-
-.type-box {
-  margin: var(--spacing-md) 0;
 }
 
 .flex-type {
@@ -73,7 +68,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: var(--spacing-xl) 0;
 }
 
 .figure img {
