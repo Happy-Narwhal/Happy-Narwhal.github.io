@@ -2,7 +2,6 @@
 
 /* Headings */
 .main {
-  font-size: 45px;
   text-align: center;
   margin: var(--spacing-md) 0;
 }
@@ -11,6 +10,9 @@
   text-align: center;
 }
 
+h1.main {
+  font-size: 45px;
+}
 h2.main {
   font-size: 35px;
 }
@@ -34,6 +36,10 @@ h2.title {
   color: #000;
   text-decoration: none;
   transition: background-size var(--transition-base);
+}
+
+.alert {
+  color: darkred;
 }
 
 .headline, .headline-bar {
