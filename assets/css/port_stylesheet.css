@@ -1,0 +1,123 @@
+
+/* Portfolio Page, legacy css styling */
+
+.tech-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+}
+.tech-row::before {
+  content: '';
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+.tech-row>*:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+.tech-col {
+  text-align: center;
+  display: flex;
+  position: relative;
+}
+.portfolio-box {
+  margin-top: 40px;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+}
+
+.tech-content {
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.tech-col:hover span {
+  display: block;
+}
+.tech-content span {
+  display: none;
+  font-weight: 600;
+  font-size: 0.8em;
+  color: black;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 95%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.tech-content img {
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.gallery:hover span, .gallery:focus span, .gallery:hover h3, .gallery:focus h3 {
+  display: block;
+}
+
+.port-row {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  width: 90%;
+  margin: auto;
+
+  .port-content {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .port-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    top: 35%;
+  }
+  .port-content h3, span {
+    display: none;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    color: #fff;
+  }
+
+  .port-content span {
+    font-weight: 200;
+    font-size: 16px;
+    top: 50%;
+  }
+}
+.gallery {
+  text-align: center;
+  display: flex;
+  padding: 0.5em;
+  cursor: pointer;
+  margin: 20px;
+  overflow: hidden;
+}
