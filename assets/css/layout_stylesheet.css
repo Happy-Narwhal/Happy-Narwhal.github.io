@@ -139,7 +139,7 @@ input[type="radio"] {
   text-align: right;
   padding: 35px 0;
   z-index: 90;
-  overflow: hidden;
+  overflow: visible;
   font-weight: bold;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
 }
@@ -149,6 +149,13 @@ input[type="radio"] {
   position: relative;
   display: inline-block;
   height: 21px;
+  overflow: visible;
+}
+
+/* Ensure dropdown menus can escape parent ul constraints */
+#nav ul li.dropdown .dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
 }
 
 #nav ul li a {
@@ -168,6 +175,108 @@ input[type="radio"] {
 
 #nav ul li a:hover {
   color: #26b8ff;
+}
+
+/* Dropdown Navigation Styles */
+#nav ul li.dropdown {
+  position: relative;
+  overflow: visible;
+}
+
+#nav ul li.dropdown,
+#nav ul li.dropdown > a {
+  height: auto;
+  line-height: normal;
+}
+
+#nav ul li.dropdown > a {
+  padding-right: 15px;
+}
+
+/* Fix blue underline bar positioning for dropdown parent links */
+#nav ul li.dropdown > a:before {
+  top: auto;
+  bottom: -3px;
+}
+
+/* Remove blue underline bar from dropdown menu links */
+#nav ul li.dropdown .dropdown-menu li a:before {
+  display: none;
+}
+
+#nav ul li.dropdown > a i {
+  font-size: 12px;
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+#nav ul li.dropdown:hover > a i {
+  transform: rotate(180deg);
+}
+
+#nav ul li.dropdown .dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  background: #fff;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border-radius: 4px;
+  padding: 5px 0;
+  list-style: none;
+  overflow: visible;
+  height: auto;
+  max-height: none;
+  display: block;
+}
+
+#nav ul li.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#nav ul li.dropdown .dropdown-menu li {
+  display: block !important;
+  width: 100%;
+  margin: 0 !important;
+  line-height: 1.5;
+  padding: 0;
+  height: auto !important;
+  overflow: visible;
+  position: relative;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#nav ul li.dropdown .dropdown-menu li a {
+  display: block !important;
+  padding: 10px 20px;
+  color: #5b5b5b;
+  text-decoration: none;
+  transition: all 0.3s;
+  border-bottom: 1px solid #f0f0f0;
+  white-space: normal;
+  line-height: 1.5;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  min-height: 40px;
+}
+
+#nav ul li.dropdown .dropdown-menu li:last-child a {
+  border-bottom: none;
+}
+
+#nav ul li.dropdown .dropdown-menu li a:hover {
+  background-color: #f8f8f8;
+  color: #26b8ff;
+  padding-left: 25px;
 }
 
 .checkbtn {
@@ -198,7 +307,9 @@ input[type="radio"] {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: 320px;
+    height: auto;
+    max-height: calc(100vh - 95px);
+    overflow-y: auto;
     background: #fff;
     top: 95px;
     left: -100%;
@@ -232,6 +343,41 @@ input[type="radio"] {
   .typo {
     top: 30px;
     left: 110px;
+  }
+  
+  /* Mobile dropdown styles */
+  #nav ul li.dropdown .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    display: none;
+    max-height: none;
+  }
+  
+  #nav ul li.dropdown .dropdown-menu li a {
+    padding: 10px 20px 10px 40px;
+    font-size: 18px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  #nav ul li.dropdown > a {
+    cursor: pointer;
+  }
+  
+  #nav ul li.dropdown > a i {
+    float: right;
+    margin-right: 20px;
+    transition: transform 0.3s;
+  }
+  
+  #nav ul li.dropdown.active > a i {
+    transform: rotate(180deg);
   }
 }
 

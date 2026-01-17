@@ -143,4 +143,46 @@
     $(validm)[0].style.display = 'none';
   }
 
+  /*==================================================================
+  [ Mobile Dropdown Navigation ]*/
+  // Prevent navigation for dropdown parent links that are just '#'
+  $(document).on('click', '#nav ul li.dropdown > a[href="#"]', function(e) {
+    e.preventDefault();
+  });
+  
+  // Toggle dropdown menus on mobile
+  $(document).on('click', '#nav ul li.dropdown > a', function(e) {
+    if ($(window).width() <= 960) {
+      e.preventDefault();
+      var $dropdown = $(this).parent('.dropdown');
+      var $menu = $dropdown.find('.dropdown-menu');
+      
+      // Close other dropdowns
+      $('.dropdown').not($dropdown).find('.dropdown-menu').slideUp(200);
+      $('.dropdown').not($dropdown).removeClass('active');
+      
+      // Toggle current dropdown
+      $dropdown.toggleClass('active');
+      $menu.slideToggle(200);
+    }
+  });
+
+  // Close dropdowns when clicking outside on mobile
+  $(document).on('click', function(e) {
+    if ($(window).width() <= 960) {
+      if (!$(e.target).closest('#nav ul li.dropdown').length) {
+        $('.dropdown-menu').slideUp(200);
+        $('.dropdown').removeClass('active');
+      }
+    }
+  });
+  
+  // Close dropdowns when mobile menu is closed
+  $('#check').on('change', function() {
+    if (!$(this).is(':checked')) {
+      $('.dropdown-menu').slideUp(200);
+      $('.dropdown').removeClass('active');
+    }
+  });
+
 })(jQuery);
