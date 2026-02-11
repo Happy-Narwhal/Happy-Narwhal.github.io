@@ -1,18 +1,49 @@
 // Minimal Geode Captcha Widget
 // Usage: Add <div class="geode-captcha"></div> in your form and give your submit button the class "geode-submit"
-// Requires: rock.png, rock2.png, hammer.png, break.gif in /assets/images/captcha/
+// Requires: rock2.png, hammer.png, break.gif, and wrong choice images in /assets/images/captcha/
 (function(){
+  // Detect base path - works for both Jekyll and static serving
+  const basePath = window.location.pathname.includes('.html') 
+    ? '' 
+    : '/';
+  const imgPath = basePath + 'assets/images/captcha/';
+
+  // Wrong choice images - rotated randomly each time
+  const wrongImages = [
+    imgPath + 'desktopcomputer.png',
+    imgPath + 'discoball.png',
+    imgPath + 'mirror.png'
+  ];
+  // Shuffle and pick 2 wrong images
+  const shuffled = wrongImages.sort(() => Math.random() - 0.5);
+  const wrongPick1 = shuffled[0];
+  const wrongPick2 = shuffled[1];
+
+  // Randomly choose which slot (0, 1, or 2) is the correct rock
+  const correctIdx = Math.floor(Math.random() * 3);
+
+  // Build the 3 rock slots
+  const slots = [0, 1, 2];
+  let wrongIdx = 0;
+  const wrongPicks = [wrongPick1, wrongPick2];
+  const rockHtml = slots.map(i => {
+    if (i === correctIdx) {
+      return `<div class="geode-rock geode-hinted"><img class="geode-rock-img" src="${imgPath}rock2.png"><img class="geode-break-gif" src="${imgPath}break.gif"></div>`;
+    } else {
+      const img = wrongPicks[wrongIdx++];
+      return `<div class="geode-rock"><img class="geode-rock-img" src="${img}"><img class="geode-break-gif" src="${imgPath}break.gif"></div>`;
+    }
+  }).join('\n          ');
+
   const html = `
     <div class="geode-captcha-box">
       <div class="geode-captcha-header">🔒 Verify you're human</div>
       <div class="geode-captcha-stage">
         <div class="geode-captcha-hint">Drag the hammer to the glowing rock</div>
         <div class="geode-captcha-rocks">
-          <div class="geode-rock"><img class="geode-rock-img" src="/assets/images/captcha/rock.png"><img class="geode-break-gif" src="/assets/images/captcha/break.gif"></div>
-          <div class="geode-rock"><img class="geode-rock-img" src="/assets/images/captcha/rock.png"><img class="geode-break-gif" src="/assets/images/captcha/break.gif"></div>
-          <div class="geode-rock"><img class="geode-rock-img" src="/assets/images/captcha/rock.png"><img class="geode-break-gif" src="/assets/images/captcha/break.gif"></div>
+          ${rockHtml}
         </div>
-        <div class="geode-hammer" draggable="false"><img src="/assets/images/captcha/hammer.png"></div>
+        <div class="geode-hammer" draggable="false"><img src="${imgPath}hammer.png"></div>
       </div>
       <input type="hidden" name="geode_captcha_solved" value="0">
     </div>
@@ -26,9 +57,6 @@
   const solvedInput = box.querySelector('input[name="geode_captcha_solved"]');
   const submitBtn = document.querySelector('.geode-submit');
   let solved = false;
-  let correctIdx = Math.floor(Math.random()*rocks.length);
-  rocks[correctIdx].classList.add('geode-hinted');
-  rocks[correctIdx].querySelector('.geode-rock-img').src = '/assets/images/captcha/rock2.png';
   // Drag logic
   let dragging = false, lastX=0, lastY=0;
   hammer.addEventListener('pointerdown', e => {
