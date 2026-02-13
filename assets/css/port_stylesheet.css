@@ -66,6 +66,7 @@
 
 .gallery:hover span, .gallery:focus span, .gallery:hover h3, .gallery:focus h3 {
   display: block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .port-row {
