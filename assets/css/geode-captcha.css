@@ -1,0 +1,41 @@
+/* Geode Captcha CSS - Styled to match contact form */
+.geode-captcha-box{
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  background: #23395d;
+  border: 0px;
+  outline: none;
+  border-radius: 10px;
+}
+.geode-captcha-header{font-size:16px;margin-bottom:12px;color:#fff;display:flex;align-items:center;gap:8px}
+.geode-captcha-stage{position:relative;height:240px;border-radius:8px;background:#ffffff;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.geode-captcha-hint{text-align:center;font-size:14px;color:#5b5b5b;margin-bottom:15px}
+.geode-captcha-rocks{display:flex;gap:30px;justify-content:center;align-items:center;padding:0 40px}
+.geode-rock{position:relative;width:90px;height:90px;overflow:visible}
+.geode-rock-img{width:100%;height:100%;object-fit:contain;background:transparent}
+.geode-break-gif{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:300px;object-fit:contain;opacity:0;pointer-events:none;background:transparent}
+.geode-solved .geode-break-gif{opacity:1}
+.geode-solved .geode-rock-img{opacity:0}
+.geode-hinted .geode-rock-img{animation:geode-glow 1.5s infinite}
+.geode-wrong{animation:geode-shake .3s}
+.geode-hammer{position:absolute;width:90px;height:90px;right:15px;bottom:15px;z-index:10;cursor:grab;touch-action:none}
+.geode-hammer.dragging{cursor:grabbing;transform:scale(1.1) rotate(-15deg)}
+.geode-hammer img{width:100%;height:100%;object-fit:contain;pointer-events:none}
+@keyframes geode-glow{0%,100%{filter:drop-shadow(0 2px 4px rgba(0,0,0,.1))}50%{filter:drop-shadow(0 0 12px rgba(162,155,254,.9))}}
+@keyframes geode-shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+@media (max-width: 600px) {
+  .geode-captcha-box {
+    width: 90%;
+    padding: 15px 20px;
+  }
+  .geode-captcha-rocks {
+    gap: 15px;
+  }
+  .geode-rock {
+    width: 70px;
+    height: 70px;
+  }
+}
