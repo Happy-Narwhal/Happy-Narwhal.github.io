@@ -233,9 +233,11 @@ input[type="radio"] {
   height: auto;
   max-height: none;
   display: block;
+  pointer-events: none;   /* invisible menu cannot be hovered or clicked */
 }
 
 #nav ul li.dropdown:hover .dropdown-menu {
+  pointer-events: auto;   /* only interactable while visible */
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
