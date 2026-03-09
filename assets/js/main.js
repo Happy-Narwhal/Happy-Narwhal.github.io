@@ -149,18 +149,18 @@
   $(document).on('click', '#nav ul li.dropdown > a[href="#"]', function(e) {
     e.preventDefault();
   });
-  
+
   // Toggle dropdown menus on mobile
   $(document).on('click', '#nav ul li.dropdown > a', function(e) {
     if ($(window).width() <= 960) {
       e.preventDefault();
       var $dropdown = $(this).parent('.dropdown');
       var $menu = $dropdown.find('.dropdown-menu');
-      
+
       // Close other dropdowns
       $('.dropdown').not($dropdown).find('.dropdown-menu').slideUp(200);
       $('.dropdown').not($dropdown).removeClass('active');
-      
+
       // Toggle current dropdown
       $dropdown.toggleClass('active');
       $menu.slideToggle(200);
@@ -176,13 +176,30 @@
       }
     }
   });
-  
+
   // Close dropdowns when mobile menu is closed
   $('#check').on('change', function() {
     if (!$(this).is(':checked')) {
       $('.dropdown-menu').slideUp(200);
       $('.dropdown').removeClass('active');
     }
+  });
+
+  /*==================================================================
+  [ Legal Compliance Tabs ]*/
+  $(document).ready(function() {
+    // Tab switching functionality
+    $('.legal-compliance-tab-btn').on('click', function() {
+      var targetTab = $(this).data('tab');
+
+      // Remove active class from all buttons and panes
+      $('.legal-compliance-tab-btn').removeClass('active');
+      $('.legal-compliance-tab-pane').removeClass('active');
+
+      // Add active class to clicked button and corresponding pane
+      $(this).addClass('active');
+      $('#tab-' + targetTab).addClass('active');
+    });
   });
 
 })(jQuery);
