@@ -1,0 +1,60 @@
+---
+title: Fruit Wars
+id: fruit-wars
+description: Fruit Wars Game
+category: games
+permalink: /fruit-wars
+---
+
+<meta charset="utf-8">
+<script src="{{ '/games/Fruit_Wars/lib/crafty.js' | relative_url }}"></script>
+<script src="{{ '/games/Fruit_Wars/src/game.js' | relative_url }}"></script>
+<script src="{{ '/games/Fruit_Wars/src/components.js' | relative_url }}"></script>
+<script src="{{ '/games/Fruit_Wars/src/combat.js' | relative_url }}"></script>
+<script src="{{ '/games/Fruit_Wars/src/scenes.js' | relative_url }}"></script>
+<script src="{{ '/games/Fruit_Wars/src/ai_movement.js' | relative_url }}"></script>
+<script src="{{ '/games/Fruit_Wars/src/display.js' | relative_url }}"></script>
+<title>Fruit Wars</title>
+
+<script>
+  window.addEventListener('load', Game.start);
+</script>
+<style type="text/css" media="screen">
+  body {
+    background: gray;
+    text-align: center;
+    color: #000;
+    font-family: Arial;
+  }
+
+  .controls {
+    color: #BBB;
+  }
+
+  #cr-stage { margin: 20px auto 0; }
+
+  .bottom {
+  font-size: 14px;
+    color: #BBB;
+    margin-top: 20px;
+  }
+
+  .bottom a {
+    color: #AAA;
+  }
+</style>
+
+<h2>Fruit Wars</h2>
+
+<p>Destroy the Candy Mountain Apples!</p>
+
+<p class="controls">Controls: Use W, A, S, and D or arrow keys to move around. <br>
+Hire commando frog for 95 gold + 5*level by pressing T. <br> Both your characters and the apples shoot fireballs automatically when in range. Good luck!</p>
+
+<div id="cr-stage"></div>
+
+<p class="bottom">Made by Bjorn using crafty.js
+  https://twitter.com/bjornishungry <br>
+  Disclaimer: Game is free and open source. Images from Google and Craig.<br>
+  Project directory: https://github.com/bjornlinder/Fruit-Wars-Game
+</p>

@@ -69,6 +69,42 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.portfolio-box .port-content {
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portfolio-box .port-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.portfolio-box .port-content h3,
+.portfolio-box .port-content span {
+  z-index: 2;
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.9),
+    0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.portfolio-box .port-content span {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  padding: 0.35em 0.7em;
+  width: fit-content;
+  backdrop-filter: blur(2px);
+}
+
 .port-row {
   display: grid;
   overflow: hidden;
@@ -111,14 +147,25 @@
   .port-content span {
     font-weight: 200;
     font-size: 16px;
-    top: 50%;
   }
 }
 .gallery {
   text-align: center;
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
   padding: 0.5em;
   cursor: pointer;
   margin: 20px;
   overflow: hidden;
+}
+
+.gallery > a {
+  display: block;
+  width: 100%;
+}
+
+.gallery > p {
+  margin-top: 10px;
+  width: 100%;
 }

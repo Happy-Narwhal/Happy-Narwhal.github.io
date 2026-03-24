@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<link rel="stylesheet" href="/assets/css/port_detail_stylesheet.css" />
+<body>
+
+  {% include nav.html %}
+  <div class="page-wrapper">
+    <div class="layout">
+      <div class="post common-padding--bottom common-padding--top-small">
+        <div class="container">
+          <div class="post__content common-content common-content--post">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include footer.html %}
+</body>
+</html>

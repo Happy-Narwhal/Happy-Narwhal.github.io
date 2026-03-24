@@ -13,6 +13,9 @@ collections:
   portfolio:
     output: true
     permalink: "/portfolio/:path"
+  games:
+    output: true
+    permalink: "/games/:path"
 
 defaults:
   - scope:
@@ -25,6 +28,12 @@ defaults:
       type: "portfolio"
     values:
       layout: "portfolio"
+      permalink: "/:name"
+  - scope:
+      path: ""
+      type: "games"
+    values:
+      layout: "games"
       permalink: "/:name"
 
 markdown: kramdown

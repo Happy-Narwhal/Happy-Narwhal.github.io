@@ -1,0 +1,72 @@
+
+
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+enemies: bugs? 
+foo, bar, bazz...
+
+powerups: chapstick, red stapler
+
+
+#6069
+
+for (i = 0; i < callbacks.length; i++) {
+    // Remove a callback if it has been deleted
+    if (typeof callbacks[i] === "undefined") {
+        callbacks.splice(i, 1);
+        i--;
+    } else
+        callbacks[i].call(context, data);
+}
+
+
+#Get missiles working. See ai_movement and combat. debugger it.
+#-unit health
+#-add creep generation...linear path initially...
+#-destroy creeps function
+/attack animation/
+#health change on contacting creeps
+#automatic level creation
+#creepwave (number creeps, health)
+#victory screen
+#game stats : experience, gold, level, score
+#persisting data to next round
+
+#display actor
+-menu (dynamic display - purchasing units)
+#selected unit display : health, unit name variables
+#display - scoreboard : global stats
+
+/intelligent movement/
+#currency
+#score
+#building towers
+
+Functions:
+
+move: function (dir, by) {
+    if (dir.charAt(0) === 'n') this.y -= by;
+    if (dir.charAt(0) === 's') this.y += by;
+    if (dir === 'e' || dir.charAt(1) === 'e') this.x += by;
+    if (dir === 'w' || dir.charAt(1) === 'w') this.x -= by;
+
+    return this;
+},
+
+ * @sign public Number Crafty.math.distance(Number x1, Number y1, Number x2, Number y2)
+ * @param x1 - First x coordinate.
+ * @param y1 - First y coordinate.
+ * @param x2 - Second x coordinate.
+ * @param y2 - Second y coordinate.
+ * @return The distance between the two points.
+ *
+ * Distance between two points.
+ */
+distance: function (x1, y1, x2, y2) {
+    var squaredDistance = Crafty.math.squaredDistance(x1, y1, x2, y2);
+    return Math.sqrt(parseFloat(squaredDistance));
+},
