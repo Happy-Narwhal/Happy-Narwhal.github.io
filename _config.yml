@@ -1,6 +1,9 @@
 title: Happy Narwhal
 description: Modern Software Development
 
+url: "https://happynarwhal.rocks"
+permalink: /blog/:year/:month/:day/:title/
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -18,6 +21,11 @@ collections:
     permalink: "/games/:path"
 
 defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "blog"
   - scope:
       path: ""
       type: "pages"

@@ -1,0 +1,315 @@
+/* Blog: sidebar category nav + two-column layout */
+
+.blog-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  margin-top: 0;
+  margin-bottom: var(--spacing-xl);
+}
+
+.blog-layout-main {
+  flex: 1 1 18rem;
+  min-width: 0;
+}
+
+.blog-layout .blog-sidebar {
+  flex: 0 0 20rem;
+  max-width: 100%;
+  position: sticky;
+  top: calc(var(--nav-height) + var(--spacing-md));
+}
+
+.blog-header {
+  margin-bottom: var(--spacing-md);
+}
+
+.blog-header-description {
+  margin: var(--spacing-xs) 0 0;
+  max-width: 42em;
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+}
+
+.blog-section-eyebrow {
+  margin: 0 0 var(--spacing-xs);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.blog-article {
+  margin: 0;
+}
+
+.blog-article-title {
+  font-family: var(--font-heading);
+  color: var(--color-secondary);
+}
+
+.blog-article-meta {
+  margin: 0 0 var(--spacing-md);
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+/*
+ * Prose lists: reset.css sets ul { list-style-type: none; padding: 0; } for nav.
+ * Markdown bullets (* / -) still become <ul><li>; they need markers + indent here.
+ */
+.blog-layout-main .post__content ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin: 0.85em 0;
+}
+
+.blog-layout-main .post__content ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+  margin: 0.85em 0;
+}
+
+.blog-layout-main .post__content li {
+  margin: 0.35em 0;
+  display: list-item;
+}
+
+.blog-layout-main .post__content ul ul,
+.blog-layout-main .post__content ol ol,
+.blog-layout-main .post__content ul ol,
+.blog-layout-main .post__content ol ul {
+  margin: 0.35em 0;
+}
+
+.blog-layout-main .post__content ul ul {
+  list-style-type: circle;
+}
+
+.blog-layout-main .post__content ul ul ul {
+  list-style-type: square;
+}
+
+.blog-sidebar {
+  padding: var(--spacing-md);
+  background: rgba(35, 57, 93, 0.06);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+}
+
+.blog-sidebar-title {
+  margin: 0 0 var(--spacing-md);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-secondary);
+}
+
+/* Sidebar: categories + post lists (hover / active) */
+.blog-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.blog-sidebar-category {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.blog-sidebar-category:last-child {
+  border-bottom: 0;
+}
+
+.blog-sidebar-category-link {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-xs);
+  margin: 0 calc(-1 * var(--spacing-xs));
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+.blog-sidebar-category-link:hover {
+  color: var(--color-primary);
+  background: rgba(38, 184, 255, 0.08);
+}
+
+.blog-sidebar-category-link.is-active {
+  color: var(--color-primary);
+}
+
+.blog-sidebar-posts {
+  display: none;
+  margin: 0 0 var(--spacing-sm);
+  padding: 0 0 0 var(--spacing-xs);
+  list-style: none;
+}
+
+.blog-sidebar-category.is-active .blog-sidebar-posts {
+  display: block;
+}
+
+.blog-sidebar-category:hover .blog-sidebar-posts,
+.blog-sidebar-category:focus-within .blog-sidebar-posts {
+  display: block;
+}
+
+/* While hovering or focusing a category, hide the previously active category’s list unless it’s the one hovered/focused */
+@supports selector(:has(*)) {
+  @media (hover: hover) and (pointer: fine) {
+    .blog-sidebar-nav:has(.blog-sidebar-category:hover) .blog-sidebar-category.is-active:not(:hover) .blog-sidebar-posts {
+      display: none;
+    }
+  }
+
+  .blog-sidebar-nav:has(.blog-sidebar-category:focus-within) .blog-sidebar-category.is-active:not(:hover):not(:focus-within) .blog-sidebar-posts {
+    display: none;
+  }
+}
+
+.blog-sidebar-post {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: baseline;
+  margin: 0;
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.6);
+}
+
+.blog-sidebar-post:last-child {
+  border-bottom: 0;
+}
+
+.blog-sidebar-post-empty {
+  display: block;
+  padding: var(--spacing-xs) 0;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.blog-sidebar-post.is-current {
+  padding-left: var(--spacing-xs);
+  margin-left: calc(-1 * var(--spacing-xs));
+  border-left: 3px solid var(--color-primary);
+  background: rgba(38, 184, 255, 0.1);
+  border-bottom-color: transparent;
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+}
+
+.blog-sidebar-post-index {
+  flex: 0 0 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-align: right;
+}
+
+.blog-sidebar-post.is-current .blog-sidebar-post-index {
+  color: var(--color-primary);
+}
+
+.blog-sidebar-post-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.blog-sidebar-post-link {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-secondary);
+  text-decoration: none;
+  line-height: 1.35;
+}
+
+a.blog-sidebar-post-link:hover {
+  color: var(--color-primary);
+}
+
+.blog-sidebar-post.is-current .blog-sidebar-post-link {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.blog-sidebar-post-date {
+  display: block;
+  margin-top: 0.15em;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.blog-empty {
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-md);
+  color: var(--color-text);
+  background: rgba(35, 57, 93, 0.04);
+  border-radius: var(--border-radius-sm);
+}
+
+@media (max-width: 768px) {
+  .blog-layout .blog-sidebar {
+    flex: 1 1 100%;
+    position: static;
+  }
+
+  /* Narrow viewports: collapse inactive categories until hover/focus */
+  .blog-sidebar-category:not(.is-active):not(:hover):not(:focus-within) .blog-sidebar-posts {
+    display: none;
+  }
+}
+
+/* Post footer: side-by-side on wide viewports */
+.blog-post-footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.blog-post-footer-heading {
+  margin-top: 0;
+}
+
+.blog-post-footer-discuss,
+.blog-post-footer-continue {
+  min-width: 0;
+}
+
+.blog-post-footer-links {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.blog-post-footer-note {
+  margin: var(--spacing-sm) 0 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+@media (min-width: 900px) {
+  .blog-post-footer {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: var(--spacing-xl);
+  }
+
+  .blog-post-footer-discuss,
+  .blog-post-footer-continue {
+    flex: 1 1 0;
+  }
+}
