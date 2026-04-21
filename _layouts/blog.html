@@ -63,15 +63,6 @@
                     </header>
                     {{ content }}
                   </article>
-                  {%- if page.share_image -%}
-                    <figure class="blog-post-bottom-image">
-                      <img
-                        src="{{ page.share_image }}"
-                        alt="{{ page.share_image_alt | default: page.title }}"
-                        loading="lazy"
-                      />
-                    </figure>
-                  {%- endif -%}
                   {%- include blog-post-footer.html -%}
                 {%- elsif sidebar_posts.size > 0 -%}
                   {%- assign featured = sidebar_posts.first -%}

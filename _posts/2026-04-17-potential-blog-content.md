@@ -15,6 +15,8 @@ This is a running list of topics I’m knowledgeable about and planning to eithe
 
 Here’s the current landscape of what I’m working on:
 
+{% include blog-post-image.html %}
+
 ### Ruby on Rails
 
 - Social media platform backend (features, architecture to support discussions)

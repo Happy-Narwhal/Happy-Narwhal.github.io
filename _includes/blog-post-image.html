@@ -1,0 +1,26 @@
+{%- comment -%}
+Usage (inside a post markdown file):
+
+Inline, using post front matter:
+  {% include blog-post-image.html %}
+
+Inline, overriding src/alt:
+  {% include blog-post-image.html src="/assets/images/blog/foo.png" alt="..." %}
+
+This include intentionally renders only markup; placement is controlled by where you include it.
+{%- endcomment -%}
+
+{%- assign p = include.post | default: page -%}
+{%- assign src = include.src | default: p.post_image | default: p.share_image -%}
+{%- assign alt = include.alt | default: p.post_image_alt | default: p.share_image_alt | default: p.title -%}
+{%- assign caption = include.caption | default: p.post_image_caption -%}
+
+{%- if src -%}
+  <figure class="blog-post-image">
+    <img src="{{ src }}" alt="{{ alt }}" loading="lazy" />
+    {%- if caption -%}
+      <figcaption class="blog-post-image-caption">{{ caption }}</figcaption>
+    {%- endif -%}
+  </figure>
+{%- endif -%}
+
