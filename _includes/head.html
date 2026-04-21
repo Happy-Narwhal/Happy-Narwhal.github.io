@@ -1,40 +1,70 @@
-{% assign title = site.title | append: ' ' | append:  page.title %}
-{% assign description = page.description ? page.description : site.description %}
-{% assign image = '/assets/images/logo.jpg' %}
-{% if page.type %}
-  {% assign type = page.type %}
-{% else %}
-  {% assign type = 'website' %}
-{% endif %}
-
+{%- assign page_title = page.title | default: site.title -%}
+{%- assign description = page.description | default: site.description -%}
+{%- assign keywords = page.keywords | default: '' -%}
+{%- comment -%}Blog keywords fallback.{%- endcomment -%}
+{%- if keywords == '' and page.blog_category -%}
+  {%- if page.blog_category == 'business-marketing' -%}
+    {%- assign keywords = 'business marketing, growth, branding, pricing psychology, SEO, ads, lead generation, go-to-market' -%}
+  {%- elsif page.blog_category == 'ruby-on-rails' -%}
+    {%- assign keywords = 'ruby on rails, rails development, comments, rspec, vcr, background jobs, file storage' -%}
+  {%- elsif page.blog_category == 'vps-devops' -%}
+    {%- assign keywords = 'vps, devops, deployment, reverse proxy, nginx, docker, mail server' -%}
+  {%- elsif page.blog_category == 'agentic-coding' -%}
+    {%- assign keywords = 'agentic coding, prompt engineering, chatgpt, agents, development workflows' -%}
+  {%- elsif page.blog_category == 'hiring' -%}
+    {%- assign keywords = 'hiring, job descriptions, interviews, recruiting, candidate selection' -%}
+  {%- else -%}
+    {%- assign keywords = 'software development, ruby on rails, devops, business, hiring, agentic coding' -%}
+  {%- endif -%}
+{%- endif -%}
+{%- if keywords == '' and page.categories -%}
+  {%- assign keywords = page.categories | join: ', ' -%}
+{%- endif -%}
+{%- assign og_image = page.og_image | default: page.share_image | default: page.image | default: '/assets/images/logo.jpg' -%}
+{%- assign og_type = page.type | default: 'website' -%}
+{%- assign baseurl = site.baseurl | default: '' -%}
+{%- assign absolute_url = site.url | append: baseurl | append: page.url -%}
+{%- assign canonical_url = absolute_url | replace: '/index.html', '/' -%}
+{%- assign share_url = page.share_url | default: canonical_url -%}
+{%- assign twitter_handle = 'bjornishungry' -%}
+{%- if og_image contains 'http' -%}
+  {%- assign og_image_full = og_image -%}
+{%- else -%}
+  {%- assign og_image_full = site.url | append: baseurl | append: og_image -%}
+{%- endif -%}
 <head>
   <meta charset="utf-8" />
   <meta content="ie=edge" http-equiv="x-ua-compatible" />
   <meta name="handheldfriendly" content="true" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ description }}" />
+  {%- if keywords != '' -%}<meta name="keywords" content="{{ keywords }}" />{%- endif -%}
+  <link rel="canonical" href="{{ share_url }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:title" content="{{ page_title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:image" content="{{ og_image_full }}" />
+  <meta property="og:url" content="{{ share_url }}" />
+  <meta property="og:type" content="{{ og_type }}" />
+  <meta name="twitter:title" content="{{ page_title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="{{ og_image_full }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="{{ twitter_handle }}" />
+  <meta name="twitter:image:alt" content="{{ page.share_image_alt | default: page_title }}" />
   <link rel="icon" href="/assets/images/favicon.ico" />
   <link rel="stylesheet" href="/assets/css/main.css" />
-
-<!-- <link rel="stylesheet" href="/assets/css/layout.css" />
-<link rel="stylesheet" href="/assets/css/reset.css" />
-<link rel="stylesheet" href="/assets/css/typography.css" />
-<link rel="stylesheet" href="/assets/css/utilities.css" />
-<link rel="stylesheet" href="/assets/css/variables.css" />
-<link rel="stylesheet" href="/assets/css/components.css" /> -->
-
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/815f6d619a.js" crossorigin="anonymous"></script>
   <script src="/assets/js/site.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18031245469"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18031245469');
+  </script>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18031245469"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18031245469');
-</script>

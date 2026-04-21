@@ -16,8 +16,8 @@
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  padding-right: 0;
+  padding-left: 0;
   margin-right: auto;
   margin-left: auto;
 }
@@ -26,6 +26,12 @@
 .page-wrapper {
   margin-top: 127px;
   padding: 0 20px;
+}
+
+@media (min-width: 1200px) {
+  .page-wrapper {
+    padding: 0 40px;
+  }
 }
 
 @media (min-width: 576px) {
@@ -70,8 +76,8 @@
   flex-wrap: wrap;
   position: relative;
   margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  margin-right: 0;
+  margin-left: 0;
 }
 .row > * {
   box-sizing: border-box;

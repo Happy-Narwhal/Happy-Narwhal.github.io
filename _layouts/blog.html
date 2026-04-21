@@ -1,66 +1,59 @@
 <!doctype html>
 <html lang="en">
-{% include head.html %}
-
+{%- include head.html -%}
 <link rel="stylesheet" href="/assets/css/blog.css" />
 <body>
-  {% include nav.html %}
-
-  {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
-  {% assign known_cats = 'ruby-on-rails|business-marketing|vps-devops|agentic-coding|hiring' | split: '|' %}
-
-  {% assign is_post_page = false %}
-  {% if page.path contains '_posts' %}
-    {% assign is_post_page = true %}
-  {% endif %}
-
-  {% if is_post_page %}
-    {% assign nav_category = 'all' %}
-    {% assign found_nav = false %}
-    {% for c in page.categories %}
-      {% unless found_nav %}
-        {% if known_cats contains c %}
-          {% assign nav_category = c %}
-          {% assign found_nav = true %}
-        {% endif %}
-      {% endunless %}
-    {% endfor %}
-  {% else %}
-    {% assign nav_category = page.blog_category | default: 'all' %}
-  {% endif %}
-
-  {% if nav_category == 'all' %}
-    {% assign sidebar_posts = sorted_posts %}
-  {% else %}
-    {% assign sidebar_posts = site.posts | where_exp: "post", "post.categories contains nav_category" | sort: 'date' | reverse %}
-  {% endif %}
-
-  {% if is_post_page %}
-    {% assign current_post_url = page.url %}
-  {% elsif sidebar_posts.size > 0 %}
-    {% assign current_post_url = sidebar_posts.first.url %}
-  {% else %}
-    {% assign current_post_url = '' %}
-  {% endif %}
-
+  {%- include nav.html -%}
+  {%- assign sorted_posts = site.posts | sort: 'date' | reverse -%}
+  {%- assign known_cats = 'ruby-on-rails|business-marketing|vps-devops|agentic-coding|hiring' | split: '|' -%}
+  {%- assign is_post_page = false -%}
+  {%- if page.path contains '_posts' -%}
+    {%- assign is_post_page = true -%}
+  {%- endif -%}
+  {%- if is_post_page -%}
+    {%- assign nav_category = 'all' -%}
+    {%- assign found_nav = false -%}
+    {%- for c in page.categories -%}
+      {%- unless found_nav -%}
+        {%- if known_cats contains c -%}
+          {%- assign nav_category = c -%}
+          {%- assign found_nav = true -%}
+        {%- endif -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- else -%}
+    {%- assign nav_category = page.blog_category | default: 'all' -%}
+  {%- endif -%}
+  {%- if nav_category == 'all' -%}
+    {%- assign sidebar_posts = sorted_posts -%}
+  {%- else -%}
+    {%- assign sidebar_posts = site.posts | where_exp: "post", "post.categories contains nav_category" | sort: 'date' | reverse -%}
+  {%- endif -%}
+  {%- if is_post_page -%}
+    {%- assign current_post_url = page.url -%}
+  {%- elsif sidebar_posts.size > 0 -%}
+    {%- assign current_post_url = sidebar_posts.first.url -%}
+  {%- else -%}
+    {%- assign current_post_url = '' -%}
+  {%- endif -%}
   <div class="page-wrapper">
     <div class="layout">
       <div class="post common-padding--bottom common-padding--top-small">
         <div class="container">
           <div class="blog-layout">
             <div class="blog-layout-main">
-              {% unless is_post_page %}
-                {% if page.title %}
+              {%- unless is_post_page -%}
+                {%- if page.title -%}
                   <header class="blog-header common-padding--top-small">
                     <p class="blog-section-eyebrow">{{ page.title }}</p>
-                    {% if page.description %}
+                    {%- if page.description -%}
                       <p class="blog-header-description">{{ page.description }}</p>
-                    {% endif %}
+                    {%- endif -%}
                   </header>
-                {% endif %}
-              {% endunless %}
+                {%- endif -%}
+              {%- endunless -%}
               <div class="post__content common-content common-content--post">
-                {% if is_post_page %}
+                {%- if is_post_page -%}
                   <article class="blog-article">
                     <header>
                       <h1 class="blog-article-title">{{ page.title }}</h1>
@@ -70,9 +63,18 @@
                     </header>
                     {{ content }}
                   </article>
-                  {% include blog-post-footer.html %}
-                {% elsif sidebar_posts.size > 0 %}
-                  {% assign featured = sidebar_posts.first %}
+                  {%- if page.share_image -%}
+                    <figure class="blog-post-bottom-image">
+                      <img
+                        src="{{ page.share_image }}"
+                        alt="{{ page.share_image_alt | default: page.title }}"
+                        loading="lazy"
+                      />
+                    </figure>
+                  {%- endif -%}
+                  {%- include blog-post-footer.html -%}
+                {%- elsif sidebar_posts.size > 0 -%}
+                  {%- assign featured = sidebar_posts.first -%}
                   <article class="blog-article">
                     <header>
                       <h1 class="blog-article-title">{{ featured.title }}</h1>
@@ -82,22 +84,21 @@
                     </header>
                     {{ featured.content }}
                   </article>
-                  {% include blog-post-footer.html post=featured %}
-                {% else %}
+                  {%- include blog-post-footer.html post=featured -%}
+                {%- else -%}
                   <p class="blog-empty">No posts in this category yet.</p>
-                {% endif %}
+                {%- endif -%}
               </div>
             </div>
 
             <aside class="blog-sidebar" aria-label="Blog">
-              {% include blog-sidebar-nav.html nav_category=nav_category current_post_url=current_post_url sorted_posts=sorted_posts %}
+              {%- include blog-sidebar-nav.html nav_category=nav_category current_post_url=current_post_url sorted_posts=sorted_posts -%}
             </aside>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  {% include footer.html %}
+  {%- include footer.html -%}
 </body>
 </html>

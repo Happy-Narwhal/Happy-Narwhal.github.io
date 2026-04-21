@@ -1,54 +1,59 @@
-{% if include.post %}
-  {% assign p = include.post %}
-{% else %}
-  {% assign p = page %}
-{% endif %}
-
-{% assign site_url = site.url | default: '' %}
-{% assign baseurl = site.baseurl | default: '' %}
-{% assign absolute_url = site_url | append: baseurl | append: p.url %}
-
-{% assign share_title = p.title | default: site.title | uri_escape %}
-{% assign share_url = absolute_url | uri_escape %}
-
+{%- if include.post -%}
+  {%- assign p = include.post -%}
+{%- else -%}
+  {%- assign p = page -%}
+{%- endif -%}
+{%- assign site_url = site.url | default: '' -%}
+{%- assign baseurl = site.baseurl | default: '' -%}
+{%- assign absolute_url = site_url | append: baseurl | append: p.url -%}
+{%- assign absolute_url = p.share_url | default: absolute_url -%}
+{%- assign share_title = p.title | default: site.title | uri_escape -%}
+{%- assign share_url = absolute_url | uri_escape -%}
 <footer class="blog-post-footer">
   <div class="blog-post-footer-discuss">
     <h3 class="blog-post-footer-heading">Discuss this post</h3>
-    <ul class="blog-post-footer-links">
-      <li>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" rel="noopener noreferrer">
-          Share on LinkedIn
-        </a>
-      </li>
-      <li>
-        <a href="https://twitter.com/intent/tweet?text={{ share_title }}&url={{ share_url }}&via=bjornishungry" target="_blank" rel="noopener noreferrer">
-          Share on X (@bjornishungry)
-        </a>
-      </li>
-      <li>
-        <a href="mailto:?subject={{ share_title }}&body={{ share_url }}">
-          Email this
-        </a>
-      </li>
-    </ul>
-    <p class="blog-post-footer-note">
-      Prefer a public thread? Post a link and tag us.
-    </p>
+    {%- if p.discussion_linkedin or p.discussion_x or p.discussion_facebook -%}
+      <ul class="blog-post-footer-links">
+        {%- if p.discussion_linkedin -%}
+          <li>
+            <a href="{{ p.discussion_linkedin }}" target="_blank" rel="noopener noreferrer">
+              Discuss on LinkedIn
+            </a>
+          </li>
+        {%- endif -%}
+        {%- if p.discussion_x -%}
+          <li>
+            <a href="{{ p.discussion_x }}" target="_blank" rel="noopener noreferrer">
+              Discuss on X
+            </a>
+          </li>
+        {%- endif -%}
+        {%- if p.discussion_facebook -%}
+          <li>
+            <a href="{{ p.discussion_facebook }}" target="_blank" rel="noopener noreferrer">
+              Discuss on Facebook
+            </a>
+          </li>
+        {%- endif -%}
+      </ul>
+    {%- else -%}
+      <p class="blog-post-footer-note">Links coming soon.</p>
+    {%- endif -%}
   </div>
 
   <div class="blog-post-footer-continue">
     <h3 class="blog-post-footer-heading">Continue reading</h3>
     <ul class="blog-post-footer-links">
-      {% if p.previous %}
+      {%- if p.previous -%}
         <li>
           <a href="{{ p.previous.url | relative_url }}">← {{ p.previous.title }}</a>
         </li>
-      {% endif %}
-      {% if p.next %}
+      {%- endif -%}
+      {%- if p.next -%}
         <li>
           <a href="{{ p.next.url | relative_url }}">{{ p.next.title }} →</a>
         </li>
-      {% endif %}
+      {%- endif -%}
       <li>
         <a href="/blog/">Back to all posts</a>
       </li>

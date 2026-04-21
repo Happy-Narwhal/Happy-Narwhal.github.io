@@ -258,6 +258,19 @@ a.blog-sidebar-post-link:hover {
   border-radius: var(--border-radius-sm);
 }
 
+.blog-post-bottom-image {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.blog-post-bottom-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-sm);
+}
+
 @media (max-width: 768px) {
   .blog-layout .blog-sidebar {
     flex: 1 1 100%;

@@ -1,61 +1,59 @@
-{% assign nav_cat = include.nav_category | default: 'all' %}
-{% assign cur_url = include.current_post_url %}
-{% assign sorted_posts = include.sorted_posts %}
-
-{% assign blog_categories = '' | split: '|' %}
-{% assign blog_categories = blog_categories | push: 'all|All|/blog/' %}
-{% assign blog_categories = blog_categories | push: 'ruby-on-rails|Ruby on Rails|/blog/category/ruby-on-rails/' %}
-{% assign blog_categories = blog_categories | push: 'business-marketing|Business & Marketing|/blog/category/business-marketing/' %}
-{% assign blog_categories = blog_categories | push: 'vps-devops|VPS & DevOps|/blog/category/vps-devops/' %}
-{% assign blog_categories = blog_categories | push: 'agentic-coding|Agentic Coding|/blog/category/agentic-coding/' %}
-{% assign blog_categories = blog_categories | push: 'hiring|Hiring|/blog/category/hiring/' %}
-
+{%- assign nav_cat = include.nav_category | default: 'all' -%}
+{%- assign cur_url = include.current_post_url -%}
+{%- assign sorted_posts = include.sorted_posts -%}
+{%- assign blog_categories = '' | split: '|' -%}
+{%- assign blog_categories = blog_categories | push: 'all|All|/blog/' -%}
+{%- assign blog_categories = blog_categories | push: 'ruby-on-rails|Ruby on Rails|/blog/category/ruby-on-rails/' -%}
+{%- assign blog_categories = blog_categories | push: 'business-marketing|Business & Marketing|/blog/category/business-marketing/' -%}
+{%- assign blog_categories = blog_categories | push: 'vps-devops|VPS & DevOps|/blog/category/vps-devops/' -%}
+{%- assign blog_categories = blog_categories | push: 'agentic-coding|Agentic Coding|/blog/category/agentic-coding/' -%}
+{%- assign blog_categories = blog_categories | push: 'hiring|Hiring|/blog/category/hiring/' -%}
 <nav class="blog-sidebar-nav" aria-label="Blog categories and posts">
-  {% for item in blog_categories %}
-    {% assign parts = item | split: '|' %}
-    {% assign slug = parts[0] %}
-    {% assign label = parts[1] %}
-    {% assign href = parts[2] %}
-    {% if slug == 'all' %}
-      {% assign cat_posts = sorted_posts %}
-    {% elsif slug == 'ruby-on-rails' %}
-      {% assign cat_posts = site.posts | where_exp: "post", "post.categories contains 'ruby-on-rails'" | sort: 'date' | reverse %}
-    {% elsif slug == 'business-marketing' %}
-      {% assign cat_posts = site.posts | where_exp: "post", "post.categories contains 'business-marketing'" | sort: 'date' | reverse %}
-    {% elsif slug == 'vps-devops' %}
-      {% assign cat_posts = site.posts | where_exp: "post", "post.categories contains 'vps-devops'" | sort: 'date' | reverse %}
-    {% elsif slug == 'agentic-coding' %}
-      {% assign cat_posts = site.posts | where_exp: "post", "post.categories contains 'agentic-coding'" | sort: 'date' | reverse %}
-    {% elsif slug == 'hiring' %}
-      {% assign cat_posts = site.posts | where_exp: "post", "post.categories contains 'hiring'" | sort: 'date' | reverse %}
-    {% else %}
-      {% assign cat_posts = site.posts | where_exp: "post", "post.path contains '___no_match___'" | sort: 'date' | reverse %}
-    {% endif %}
-    <section class="blog-sidebar-category{% if nav_cat == slug %} is-active{% endif %}">
+  {%- for item in blog_categories -%}
+    {%- assign parts = item | split: '|' -%}
+    {%- assign slug = parts[0] -%}
+    {%- assign label = parts[1] -%}
+    {%- assign href = parts[2] -%}
+    {%- if slug == 'all' -%}
+      {%- assign cat_posts = sorted_posts -%}
+    {%- elsif slug == 'ruby-on-rails' -%}
+      {%- assign cat_posts = site.posts | where_exp: "post", "post.categories contains 'ruby-on-rails'" | sort: 'date' | reverse -%}
+    {%- elsif slug == 'business-marketing' -%}
+      {%- assign cat_posts = site.posts | where_exp: "post", "post.categories contains 'business-marketing'" | sort: 'date' | reverse -%}
+    {%- elsif slug == 'vps-devops' -%}
+      {%- assign cat_posts = site.posts | where_exp: "post", "post.categories contains 'vps-devops'" | sort: 'date' | reverse -%}
+    {%- elsif slug == 'agentic-coding' -%}
+      {%- assign cat_posts = site.posts | where_exp: "post", "post.categories contains 'agentic-coding'" | sort: 'date' | reverse -%}
+    {%- elsif slug == 'hiring' -%}
+      {%- assign cat_posts = site.posts | where_exp: "post", "post.categories contains 'hiring'" | sort: 'date' | reverse -%}
+    {%- else -%}
+      {%- assign cat_posts = site.posts | where_exp: "post", "post.path contains '___no_match___'" | sort: 'date' | reverse -%}
+    {%- endif -%}
+    <section class="blog-sidebar-category{%- if nav_cat == slug -%} is-active{%- endif -%}">
       <a
         href="{{ href | relative_url }}"
-        class="blog-sidebar-category-link{% if nav_cat == slug %} is-active{% endif %}"
-        {% if nav_cat == slug %}aria-current="page"{% endif %}
+        class="blog-sidebar-category-link{%- if nav_cat == slug -%} is-active{%- endif -%}"
+        {%- if nav_cat == slug -%}aria-current="page"{%- endif -%}
       >{{ label }}</a>
       <ul class="blog-sidebar-posts" role="list">
-        {% if cat_posts.size == 0 %}
+        {%- if cat_posts.size == 0 -%}
           <li class="blog-sidebar-post blog-sidebar-post-empty">No posts yet.</li>
-        {% else %}
-          {% for p in cat_posts %}
-            <li class="blog-sidebar-post{% if p.url == cur_url %} is-current{% endif %}">
+        {%- else -%}
+          {%- for p in cat_posts -%}
+            <li class="blog-sidebar-post{%- if p.url == cur_url -%} is-current{%- endif -%}">
               <span class="blog-sidebar-post-index" aria-hidden="true">{{ forloop.index }}</span>
               <div class="blog-sidebar-post-body">
-                {% if p.url == cur_url %}
+                {%- if p.url == cur_url -%}
                   <span class="blog-sidebar-post-link" aria-current="page">{{ p.title }}</span>
-                {% else %}
+                {%- else -%}
                   <a class="blog-sidebar-post-link" href="{{ p.url | relative_url }}">{{ p.title }}</a>
-                {% endif %}
+                {%- endif -%}
                 <time class="blog-sidebar-post-date" datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date_to_string }}</time>
               </div>
             </li>
-          {% endfor %}
-        {% endif %}
+          {%- endfor -%}
+        {%- endif -%}
       </ul>
     </section>
-  {% endfor %}
+  {%- endfor -%}
 </nav>
