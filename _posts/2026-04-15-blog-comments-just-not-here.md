@@ -4,11 +4,11 @@ date: 2026-04-15
 categories:
   - business-marketing
 description: The site holds the blog; public conversation happens on the socials.
-discussion_linkedin: https://www.linkedin.com/posts/PLACEHOLDER_HAPPY_NARWHAL_blog-comments-just-not-here
+discussion_linkedin: https://www.linkedin.com/feed/update/urn:li:share:7452677567607676929/
 keywords: blog comments, linkedin discussion, content strategy, SEO, marketing, community, rails
 ---
 
-When reading a blog, we often expect to see comments at the bottoms of each post. Sometimes they're built in, sometimes added through plugins.
+When reading a blog, we often expect to see comments at the bottom of each post. Sometimes they're built in, sometimes added through plugins.
 
 But implementing a comment system involves much more than just storing comments. If you want conversations to work well, you quickly run into challenges like:
 

@@ -6,7 +6,7 @@ categories:
 description: Potential subjects to write about for the blog, or turn into training later.
 share_image: /assets/images/blog/potential-blog-content.png
 share_image_alt: Potential blog content chart
-keywords: business marketing, growth content, branding, pricing psychology, SEO, ads, go-to-market, blog training
+keywords: startup business strategy, marketing strategy, growth content, branding, SEO, RoR blog, devops blog
 redirect_from:
   - /blog/2026/04/17/potential-blog-content/
 ---
@@ -53,6 +53,7 @@ Here’s the current landscape of what I’m working on:
 
 ### Hiring
 
+- <a href='/blog/2026/04/02/finding-remote-talent/'>Finding remote talent</a>
 - Writing strong job descriptions
 - Interviewing effectively
 - Choosing the right candidates
